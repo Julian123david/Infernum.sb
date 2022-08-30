@@ -1,0 +1,78 @@
+/*Titulo de la pagina h1*/
+.Titulo{
+	font-family: inherit;
+	margin-left: 10%;
+	font-size: 250%;
+}
+
+/*Boton new user y busqueda*/
+.NewUser{
+	text-decoration: none;
+	border: none;
+	background-color: #5E6EB2;
+	color: white;
+	font-size: 130%;
+	padding: 7px;
+	width: 170px;
+	border-radius: 15px;
+}
+.NewUserdiv{
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+	margin-bottom: 50px;
+}
+.buscar{
+	padding: 10px;
+	outline: none;
+	width: 270px;
+	border-radius: 15px;
+	background-color: #dadce8;
+	border: none;
+	font-size: 110%;
+}
+.NewUser:hover{
+	background-color: #515E97;
+}
+.buscar:hover{
+	background-color: #C0C2CB;
+}
+
+/*Tabla*/
+.tabla{
+	border-color: black 1px solid;
+	border: black 3px solid;
+	border-spacing: 0;
+	margin: auto auto;
+	width: 60%;
+	text-align: center;
+	font-family: sans-serif;
+	font-size: 130%;
+}
+
+.tr{
+	background-color: #5E6EB2;
+}
+.tr2 td{
+	border:1px solid;
+	padding:5px ;
+}
+.tr th{
+	border:1px solid;
+	padding:5px;
+}
+th p{
+	color: white;
+}
+/*icono editar*/
+.edit{
+	width: 30px;
+	height: 30px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+/*icono eliminar*/
+.delete{
+	width: 30px;
+	height: 30px;
+}

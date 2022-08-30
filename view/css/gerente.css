@@ -1,0 +1,6 @@
+a img{
+	width: 80px;
+height: 80px;
+border-radius: 60%;
+left: calc(100px);
+}

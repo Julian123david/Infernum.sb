@@ -1,0 +1,27 @@
+
+
+table {
+    border-collapse: collapse;
+    width: 50%;
+    margin-left: 50px;
+    font-size: 25px;
+
+
+}
+th, td {
+    text-align: left;
+    padding: 1px;
+
+
+}
+tr{background-color: #f2f2f2}
+th {
+    background-color: #141e48;
+    color: white;
+}
+
+img {
+    width: 50px;
+	height: 50px;
+	border-radius: 50%;
+}

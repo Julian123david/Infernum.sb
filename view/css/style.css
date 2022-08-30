@@ -1,0 +1,233 @@
+
+
+.slide {
+    position: relative;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.64);
+    margin-top: 26px;
+}
+
+.slide-inner {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: calc( 500px + 3em);
+}
+
+.slide-open:checked + .slide-item {
+    position: static;
+    opacity: 100;
+}
+
+.slide-item {
+    position: absolute;
+    opacity: 0;
+    -webkit-transition: opacity 0.6s ease-out;
+    transition: opacity 0.6s ease-out;
+}
+
+.slide-item img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+.slide-control {
+    background: rgba(0, 0, 0, 0.28);
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+    font-size: 40px;
+    height: 40px;
+    line-height: 35px;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    cursor: pointer;
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    text-align: center;
+    width: 40px;
+    z-index: 10;
+}
+
+.slide-control.prev {
+    left: 2%;
+}
+
+.slide-control.next {
+    right: 2%;
+}
+
+.slide-control:hover {
+    background: rgba(0, 0, 0, 0.8);
+    color: #aaaaaa;
+}
+
+#slide-1:checked ~ .control-1,
+#slide-2:checked ~ .control-2,
+#slide-3:checked ~ .control-3 {
+    display: block;
+}
+
+.slide-indicador {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 2%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 10;
+}
+
+.slide-indicador li {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.slide-circulo {
+    color: #828282;
+    cursor: pointer;
+    display: block;
+    font-size: 35px;
+}
+
+.slide-circulo:hover {
+    color: #aaaaaa;
+}
+
+#slide-1:checked ~ .control-1 ~ .slide-indicador 
+     li:nth-child(1) .slide-circulo,
+#slide-2:checked ~ .control-2 ~ .slide-indicador 
+      li:nth-child(2) .slide-circulo,
+#slide-3:checked ~ .control-3 ~ .slide-indicador 
+      li:nth-child(3) .slide-circulo {
+    color: #428bca;
+}
+
+#titulo {
+    width: 100%;
+    position: absolute;
+    padding: 0px;
+    margin: 0px auto;
+    text-align: center;
+    font-size: 27px;
+    color: rgba(255, 255, 255, 1);
+    font-family: 'Open Sans', sans-serif;
+    z-index: 9999;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.33), 
+         -1px 0px 2px rgba(255, 255, 255, 0);
+}
+
+a img{
+	width: 80px;
+height: 80px;
+border-radius: 60%;
+left: calc(100px);
+}
+
+.Titulo{
+	
+	font-family: century-gothic, sans-serif;
+}
+.DivTitulo{
+	text-align: center;
+	margin-top: 7%;
+}
+.ProductosGeneral{
+	margin: 4%;
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	
+
+}
+.Propducto1{
+	
+	text-align: left;
+	width: 32%;
+	border: gray 3px solid;
+	border-radius: 3px;
+	margin-left: 0.5%;
+	text-align: center;
+	margin-bottom: 2%;
+}
+.Propducto2{
+	width: 32%;
+	margin-left: 0.5%;
+	text-align: center;
+	border: gray 3px solid;
+	border-radius: 3px;
+	margin-bottom: 2%;
+}
+.Propducto3{
+	
+	width: 32%;
+	margin-left: 0.5%;
+	text-align: center;
+	border: gray 3px solid;
+	border-radius: 3px;
+	margin-bottom: 2%;
+}
+
+.img1{
+	width: 70%;
+	height: 500px;
+    background-image: url(https://gwdotaciones.com.co/wp-content/uploads/2019/10/camisa-blanca-frente.jpg);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	margin: auto auto;
+	margin-bottom: 0px;
+}
+
+.img2{
+	width: 70%;
+	height: 500px;
+	background-image: url(http://verbo.spadd.net/web/image/product.template/10561/image);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	margin: auto auto;
+}
+.img3{
+	width: 70%;
+	height: 500px;
+	background-image: url(https://www.vingino.com/media/image/76/fd/f9/SS22KBN77503_XUN_Deep-20Black_BACK.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	margin: auto auto;
+}
+p{
+	background: none;
+}
+.Ver{
+	background-color: #DBDBDB;
+	border: none;
+	width: 30%;
+	height: 20%;
+	float: left;
+	margin: -100px 35%;
+}
+
+.ver, a{
+	background-color: #494949;
+	border: none;
+	text-decoration: none;
+	color: white;
+	display: block;
+	position: relative;
+	margin: -80px 35%;
+	width: 30%;
+	height: 50px;
+	padding-top: 10px;
+}
+.ver  a{
+	display: inline-block;
+	position: relative;
+}
