@@ -26,6 +26,18 @@ class ProductoController{
         require_once '../view/producto/producto-editar.php';
 
     }
+
+    public function Crud1(){
+        $alm = new Producto();
+        
+        if(isset($_REQUEST['id'])){
+            $alm = $this->model->Obtener($_REQUEST['id']);
+        }
+        
+
+        require_once '../view/producto/producto-insertar.php';
+
+    }
     
     public function Guardar(){
         $alm = new Producto();

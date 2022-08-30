@@ -34,7 +34,7 @@
     </div>
 
     <div class="nombre">
-        <input type="number" name="NumDocEmpleado" value="<?php echo $alm->NumDocEmpleado; ?>" class="input" placeholder="Ingrese Numero Documento" required="required" />
+        <input type="number" name="NumDocEmpleado" value="<?php echo $alm->NumDocEmpleado; ?>" class="input" placeholder="Ingrese Numero Documento" required="required" readonly/>
     </div>
 
     <div class="nombre">

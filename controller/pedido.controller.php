@@ -26,6 +26,18 @@ class PedidoController{
         require_once '../view/pedido/pedido-editar.php';
 
     }
+
+    public function Crud1(){
+        $alm = new Pedido();
+        
+        if(isset($_REQUEST['IdPedido'])){
+            $alm = $this->model->Obtener($_REQUEST['IdPedido']);
+        }
+        
+
+        require_once '../view/pedido/pedido-insertar.php';
+
+    }
     
     public function Guardar(){
         $alm = new Pedido();

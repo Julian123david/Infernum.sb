@@ -26,6 +26,18 @@ class CategoriaController{
         require_once '../view/categoria/categoria-editar.php';
 
     }
+
+    public function Crud1(){
+        $alm = new Categoria();
+        
+        if(isset($_REQUEST['IdCategoria'])){
+            $alm = $this->model->Obtener($_REQUEST['IdCategoria']);
+        }
+        
+
+        require_once '../view/categoria/categoria-insertar.php';
+
+    }
     
     public function Guardar(){
         $alm = new Categoria();

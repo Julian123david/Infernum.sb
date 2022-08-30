@@ -26,6 +26,18 @@ class ClienteController{
         require_once '../view/cliente/cliente-editar.php';
 
     }
+
+    public function Crud1(){
+        $alm = new Cliente();
+        
+        if(isset($_REQUEST['IdCliente'])){
+            $alm = $this->model->Obtener($_REQUEST['IdCliente']);
+        }
+        
+
+        require_once '../view/cliente/cliente-insertar.php';
+
+    }
     
     public function Guardar(){
         $alm = new Cliente();

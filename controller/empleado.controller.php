@@ -26,6 +26,18 @@ class EmpleadoController{
         require_once '../view/empleado/empleado-editar.php';
 
     }
+
+    public function Crud1(){
+        $alm = new Empleado();
+        
+        if(isset($_REQUEST['IdEmpleado'])){
+            $alm = $this->model->Obtener($_REQUEST['IdEmpleado']);
+        }
+        
+
+        require_once '../view/empleado/empleado-insertar.php';
+
+    }
     
     public function Guardar(){
         $alm = new Empleado();

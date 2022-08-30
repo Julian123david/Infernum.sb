@@ -4,7 +4,7 @@
 
 <br>
 <div class="NewUserdiv">
-<a  href="?c=Categoria&a=Crud">
+<a  href="?c=Categoria&a=Crud1">
     <input class="NewUser" type="button" value="Nuevo Usuario"> </a> 
     <input class="buscar" type="text" placeholder="BuscarUsuario">
 </div>
