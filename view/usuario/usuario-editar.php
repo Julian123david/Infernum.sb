@@ -2,7 +2,7 @@
 <style>
 .label{
     float: left; 
-    margin-left: 10%;
+    margin-left: 15%;
     margin-bottom: -70px;
     font-family: Verdana;
 }
@@ -44,17 +44,21 @@ input, input:valid {
 
 </ol>
 
-<form id="frm-usuario" action="?c=Usuario&a=Guardar" method="post" enctype="multipart/form-data">
+<form id="frm-usuario" action="?c=Usuario&a=Guardar" autocomplete="off" method="post" enctype="multipart/form-data" name="Pru">
     <input type="hidden" name="IdUsuario" value="<?php echo $alm->IdUsuario; ?>" />
     
     <div class="nombre">
-        <input type="text" id="name" name="NombreUsuario" value="<?php echo $alm->NombreUsuario; ?>" class="input" placeholder="Nombre Usuario" required="required" minlength="6" maxlength="35"  /><br>
-    <label id="Error1" class="error" style="color:red"></label><br>
+        <label class="label">Nombre:</label>
+        <input type="text" name="NombreUsuario" value="<?php echo $alm->NombreUsuario; ?>" class="input" placeholder="Nombre Usuario" required  minlength="6" maxlength="35"/> 
+        <br>
+        <label id="Error1" class="error" style="color:red"></label>
+        <br>
         <label id="Error3" class="error" style="color:red"></label>
     </div>
     
     <div class="nombre">
-        <input type="password" id="password" name="ClaveUsuario" value="<?php echo $alm->ClaveUsuario; ?>" class="input" placeholder="Clave Usuario" required="required" minlength="6" maxlength="15" readonly /><br>
+        <label class="label">Contraseña:</label>
+        <input type="password" name="ClaveUsuario" value="<?php echo $alm->ClaveUsuario; ?>" class="input" placeholder="Clave Usuario" required="required" minlength="6" maxlength="15" /><br>
         <label id="Error2" class="error" style="color:red"></label><br>
         <label id="Error4" class="error" style="color:red"></label>
     </div>

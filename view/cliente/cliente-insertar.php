@@ -43,7 +43,7 @@ input, input:valid {
 
 </ol>
 
-<form id="frm-cliente" action="?c=Cliente&a=Guardar" method="post" enctype="multipart/form-data">
+<form id="frm-cliente" autocomplete="off" action="?c=Cliente&a=Guardar" method="post" enctype="multipart/form-data">
     <input type="hidden" name="IdCliente" value="<?php echo $alm->IdCliente; ?>" />
 
      <div class="nombre">

@@ -14,6 +14,7 @@
     font-family: Verdana;
     width: 265px;
     text-align: center;
+    
 
 }
 .warning{
@@ -42,12 +43,14 @@ input, input:valid {
 
 </ol>
 
-<form id="frm-usuario" action="?c=Usuario&a=Guardar" method="post" enctype="multipart/form-data" name="Pru">
+<form id="frm-usuario" action="?c=Usuario&a=Guardar" autocomplete="off" method="post" enctype="multipart/form-data" name="Pru">
     <input type="hidden" name="IdUsuario" value="<?php echo $alm->IdUsuario; ?>" />
     
     <div class="nombre">
-        <input type="text" name="NombreUsuario" value="<?php echo $alm->NombreUsuario; ?>" class="input" placeholder="Nombre Usuario" required  minlength="6" maxlength="35"/> <br>
-    <label id="Error1" class="error" style="color:red"></label><br>
+        <input type="text" name="NombreUsuario" value="<?php echo $alm->NombreUsuario; ?>" class="input" placeholder="Nombre Usuario" required  minlength="6" maxlength="35"/> 
+        <br>
+        <label id="Error1" class="error" style="color:red"></label>
+        <br>
         <label id="Error3" class="error" style="color:red"></label>
     </div>
     
@@ -92,17 +95,17 @@ input, input:valid {
                 var ClaveUsuario = document.Pru.ClaveUsuario.value;
 
                 if(NombreUsuario === ""){
-                    document.getElementById("Error1").innerText="*Error, campo vacio";
+                    document.getElementById("Error1").innerText="Campo vacio";
                 } else {
                     document.getElementById("Error1").innerText="";
                 }
                 if(ClaveUsuario === ""){
-                    document.getElementById("Error2").innerText="*Error, campo vacio";
+                    document.getElementById("Error2").innerText="Campo vacio";
                 } else {
                     document.getElementById("Error2").innerText="";
                 }
                 if(NombreUsuario.length < 6 ){
-                    document.getElementById("Error3").innerText="*Error, nombre demasiado corto";
+                    document.getElementById("Error3").innerText="Nombre demasiado corto";
                 } else {
                     document.getElementById("Error3").innerText="";
                 }
