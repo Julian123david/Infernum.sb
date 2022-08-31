@@ -53,3 +53,7 @@
 .botondiv{
 	margin-left: 10%;
 }
+.label{
+    float: left; 
+    margin-left: 15px;
+}

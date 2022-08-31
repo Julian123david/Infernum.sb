@@ -1,5 +1,7 @@
 <link rel="stylesheet" type="text/css" href="../css/view.css">
-
+<style type="text/css">
+    
+</style>
 
 <h1 class="Titulo">Rol</h1>
 
@@ -28,7 +30,7 @@
                 <a href="?c=Rol&a=Crud&IdRol=<?php echo $r->IdRol; ?>"><img class="edit" src="img/edit.png"></a>
             </td>
             <td>
-                <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?c=Rol&a=Eliminar&IdRol=<?php echo $r->IdRol; ?>"><img class="delete" src="img/delete.png"></a>
+                <a onclick="javascript:return confirm('¿Seguro de eliminar este ROL?');" href="?c=Rol&a=Eliminar&IdRol=<?php echo $r->IdRol; ?>"><img class="delete" src="img/delete.png"></a>
             </td>
         </tr>
     <?php endforeach; ?>

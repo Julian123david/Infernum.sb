@@ -1,5 +1,12 @@
 <link rel="stylesheet" type="text/css" href="../css/view.css">
-
+<style>
+    .imagen{
+	width: 100%;
+	height:  auto ;
+	margin: auto auto;
+    border-radius: 1px;
+}
+</style>
 <h1 class="Titulo">Producto</h1>
 
 <br>
@@ -28,7 +35,7 @@
         <tr class="tr2">
             <td><?php echo $r->id; ?></td>          
             <td><?php echo $r->IdCategoria; ?></td>
-            <td><?php echo $r->img; ?></td>
+            <td><img class="imagen" src="<?php echo $r->img; ?>"></img></td>
             <td><?php echo $r->cod; ?></td>
             <td><?php echo $r->nom; ?></td>
             <td><?php echo $r->pre; ?></td>
@@ -37,7 +44,7 @@
                 <a href="?c=Producto&a=Crud&id=<?php echo $r->id; ?>"><img class="edit" src="img/edit.png"></a>
             </td>
             <td>
-                <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?c=Producto&a=Eliminar&id=<?php echo $r->id; ?>">                <img class="delete" src="img/delete.png">
+                <a onclick="javascript:return confirm('¿Seguro de eliminar este producto?');" href="?c=Producto&a=Eliminar&id=<?php echo $r->id; ?>">                <img class="delete" src="img/delete.png">
 </a>
             </td>
         </tr>

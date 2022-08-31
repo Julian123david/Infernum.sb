@@ -47,7 +47,7 @@
     <br>
     <center>
     <div class="botondiv">
-        <button id="button">Guardar</button>
+        <button onclick="javascript:return confirm('¿Seguro de editar este empleado?');" id="button">Guardar</button>
     </div>
     </center>
 </form>

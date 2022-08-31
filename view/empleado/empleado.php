@@ -40,7 +40,7 @@
                 <a href="?c=Empleado&a=Crud&IdEmpleado=<?php echo $r->IdEmpleado; ?>"><img class="edit" src="img/edit.png"></a>
             </td>
             <td>
-                <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?c=Empleado&a=Eliminar&IdEmpleado=<?php echo $r->IdEmpleado; ?>"><img class="delete" src="img/delete.png"></a>
+                <a onclick="javascript:return confirm('¿Seguro de eliminar este empleado?');" href="?c=Empleado&a=Eliminar&IdEmpleado=<?php echo $r->IdEmpleado; ?>"><img class="delete" src="img/delete.png"></a>
             </td>
         </tr>
     <?php endforeach; ?>

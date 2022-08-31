@@ -28,20 +28,20 @@
 <a href="loginout.php">Cerrar Seción</a>
 
 <br><br>
-<a href="http://localhost/intento/view/IndexUsuario.php">Gestionar Usuarios</a>
+<a href="IndexUsuario.php">Gestionar Usuarios</a>
 <br><br>
-<a href="http://localhost/intento/view/IndexCliente.php">Gestionar Clientes</a>
+<a href="IndexCliente.php">Gestionar Clientes</a>
 <br><br>
-<a href="http://localhost/intento/view/IndexEmpleado.php">Gestionar Empleados</a>
+<a href="IndexEmpleado.php">Gestionar Empleados</a>
 <br><br>
-<a href="http://localhost/intento/view/IndexRol.php">Gestionar Rol</a>
+<a href="IndexRol.php">Gestionar Rol</a>
 <br><br>
-<a href="http://localhost/intento/view/IndexProducto.php">Gestionar Producto</a>
+<a href="IndexProducto.php">Gestionar Producto</a>
 <br><br>
-<a href="http://localhost/intento/view/IndexCategoria.php">Gestionar Categoria</a>
+<a href="IndexCategoria.php">Gestionar Categoria</a>
 <br><br>
-<a href="http://localhost/intento/view/IndexCompania.php">Gestionar Compañia de Envio</a>
+<a href="IndexCompania.php">Gestionar Compañia de Envio</a>
 <br><br>
-<a href="http://localhost/intento/view/IndexPedido.php">Gestionar Pedido</a>
+<a href="IndexPedido.php">Gestionar Pedido</a>
 </body>
 </html>

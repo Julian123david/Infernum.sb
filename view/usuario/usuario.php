@@ -1,5 +1,5 @@
 <link rel="stylesheet" type="text/css" href="../css/view.css">
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="js/alertas.js"></script>
 
 </script>
 
@@ -40,11 +40,15 @@
 </a>
             </td>
             <td>
+                
                 <a onclick="javascript:return  confirm('¿Seguro de eliminar este registro?');" href="?c=Usuario&a=Eliminar&IdUsuario=<?php echo $r->IdUsuario; ?>">                    
                 <img class="delete" src="img/delete.png">
+    
 </a>
             </td>
         </tr>
     <?php endforeach; ?>
     </tbody>
 </table> 
+
+
