@@ -35,7 +35,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
             <th>Id</th>            
             <th>IdUsuario</th>
             <th>NombreCliente</th>
-            <th>ApellidoCliente/th>
+            <th>ApellidoCliente</th>
             <th>DireccionCliente</th>
             <th>TelefonoCliente</th>
             <th>NumDocCliente</th>
@@ -61,7 +61,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                 <a href="?c=Cliente&a=Crud&IdCliente=<?php echo $r->IdCliente; ?>"><img class="edit" src="img/edit.png"></a>
             </td>
             <td>
-                <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?c=Cliente&a=Eliminar&IdCliente=<?php echo $r->IdCliente; ?>">                  <img class="delete" src="img/delete.png"></a>
+                <a onclick="javascript:return confirm('¿Seguro de eliminar este cliente?');" href="?c=Cliente&a=Eliminar&IdCliente=<?php echo $r->IdCliente; ?>">                  <img class="delete" src="img/delete.png"></a>
             </td>
         </tr>
         <tr class='noSearch hide'>

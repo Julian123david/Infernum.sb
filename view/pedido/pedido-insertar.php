@@ -1,5 +1,13 @@
 <link rel="stylesheet" type="text/css" href="css/formulario.css">
 
+<style type="text/css">
+    .label{
+    float: left; 
+    margin-left: 15%;
+    margin-bottom: -70px;
+    font-family: Verdana;
+}
+</style>
 <h1 class="Titulo">
     <?php echo $alm->IdPedido != null ? $alm->IdPedido : 'Nuevo Pedido'; ?>
 </h1>
@@ -25,8 +33,9 @@
     <div class="nombre">
         <input type="text" name="IdCompaniaEnvio" value="<?php echo $alm->IdCompaniaEnvio; ?>" class="input" placeholder="Ingrese Compañia Envio" required="required" />
     </div>
-
+<br>
     <div class="nombre">
+<<<<<<< HEAD
         <input type="date" name="FechaPedido" value="<?php echo $alm->FechaPedido; ?>" class="input" placeholder="Ingrese " required="required"  max="<?php echo date("Y-m-d",strtotime(date("Y-m-d")."+ 15 days"));?>" 
   min = "<?php echo date("Y-m-d",strtotime(date("Y-m-d")."+ 7 days"));?>"/>
     </div>
@@ -34,6 +43,17 @@
     <div class="nombre">
         <input type="date" name="FechaEnvio" value="<?php echo $alm->FechaEnvio; ?>" class="input" placeholder="Ingrese " required="required" max="<?php echo date("Y-m-d",strtotime(date("Y-m-d")."+ 0 days"));?>" 
   min = "<?php echo date("Y-m-d");?>"/>
+=======
+        <label class="label">Fecha Pedido</label>
+        <input type="date" name="FechaPedido" value="<?php echo $alm->FechaPedido; ?>"  max="<?php echo date("Y-m-d",strtotime(date("Y-m-d")."+ 0 days"));?>" 
+  min = "<?php echo date("Y-m-d",strtotime(date("Y-m-d")    ));?>" class="input" placeholder="Ingrese " required="required" / readondly>
+    </div>
+    
+    <div class="nombre">
+        <label class="label">Fecha Envio</label>
+        <input type="date" name="FechaEnvio" value="<?php echo $alm->FechaEnvio; ?>" max="<?php echo date("Y-m-d",strtotime(date("Y-m-d")."+ 8   days"));?>" 
+  min = "<?php echo date("Y-m-d",strtotime(date("Y-m-d")    ));?>" class="input" placeholder="Ingrese " required="required" />
+>>>>>>> 4350297f9ea70579e6b0aea20c8e41acd5170996
     </div>
 
     <div class="nombre">

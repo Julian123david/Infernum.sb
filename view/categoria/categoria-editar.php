@@ -27,7 +27,7 @@
     <br>
     <center>
     <div class="botondiv">
-        <button id="button" >Guardar    
+        <button onclick="javascript:return confirm('¿Seguro de editar esta categoria?');" id="button" >Guardar    
 </button>
     </div>
     </center>

@@ -1,4 +1,48 @@
 <link rel="stylesheet" type="text/css" href="css/formulario.css">
+<style>
+.label{
+    float: left; 
+    margin-left: 15%;
+    margin-bottom: -70px;
+    font-family: Verdana;
+}
+.error{
+    margin-left: 17%;
+    margin-top: -20px;
+    float: left;
+    background-color: rgba(255, 0, 0, 0.1);
+    font-family: Verdana;
+    width: 265px;
+    text-align: center;
+
+}
+.error5{
+    margin-left: 17%;
+    margin-top: -56 px;
+    float: left;
+    background-color: rgba(255, 0, 0, 0.1);
+    font-family: Verdana;
+    width: 265px;
+    text-align: center;
+
+}
+.warning{
+    width: 300px;
+    text-align: center;
+    margin: auto;
+    color: #215B99;
+    padding-top: 20px;
+    font-size: 150%;
+}
+input:invalid { 
+    border-bottom-color: red; 
+} 
+
+input, input:valid { 
+    border-bottom-color: green; 
+}
+</style>
+<script src="js/alertas.js"></script>
 
 <h1 class="Titulo">
     <?php echo $alm->IdUsuario != null ? $alm->NombreUsuario : 'Nuevo Usuario'; ?>
@@ -10,15 +54,24 @@
 
 </ol>
 
-<form id="frm-usuario" action="?c=Usuario&a=Guardar" method="post" enctype="multipart/form-data">
+<form id="frm-usuario" action="?c=Usuario&a=Guardar" autocomplete="off" method="post" enctype="multipart/form-data" name="Pru">
     <input type="hidden" name="IdUsuario" value="<?php echo $alm->IdUsuario; ?>" />
     
     <div class="nombre">
-        <input type="text" name="NombreUsuario" value="<?php echo $alm->NombreUsuario; ?>" class="input" placeholder="Nombre Usuario" required="required" minlength="7" maxlength="35"  />
+        <label class="label">Nombre:</label>
+        <input type="text" name="NombreUsuario" value="<?php echo $alm->NombreUsuario; ?>" class="input" placeholder="Nombre Usuario" required  minlength="6" maxlength="35"/> 
+        <br>
+        <label id="Error1" class="error" style="color:red"></label>
+        <br>
+        <label id="Error3" class="error" style="color:red"></label>
     </div>
-    
+    <br><br>
     <div class="nombre">
-        <input type="text" name="ClaveUsuario" value="<?php echo $alm->ClaveUsuario; ?>" class="input" placeholder="Clave Usuario" required="required" minlength="7" maxlength="15" readonly />
+        <label class="label">Contraseña:</label>
+        <input type="password" name="ClaveUsuario" value="<?php echo $alm->ClaveUsuario; ?>" class="input" placeholder="Clave Usuario" required="required" minlength="6" maxlength="15" /><br>
+        <label id="Error2" class="error" style="color:red"></label><br>
+        <label id="Error4" class="error" style="color:red"></label><br>
+        <label id="Error5" class="error5" style="color:red"></label><br>
     </div>
 
     <div class="nombre">
@@ -42,13 +95,56 @@
     <br>
     <center>
     <div class="botondiv">
-        <button id="button" >Guardar    
-</button>
+        <button id="button" onmouseover="validar()" onclick="javascript:return  confirm('¿Seguro de editar este usuario?');">Guardar  </button>
+        <input type="hidden" value="1" name="opcion"><br><br>
+        
     </div>
+    
     </center>
 
     <td>
             </td>
+<script type="text/javascript">
+
+
+            const expresiones = {
+                usuario: /^[a-zA-Z0-9\_\-]{4,16} /
+            }
+
+            function validar(){
+                var NombreUsuario = document.Pru.NombreUsuario.value;
+                var ClaveUsuario = document.Pru.ClaveUsuario.value;
+
+
+
+                if(NombreUsuario === ""){
+                    document.getElementById("Error1").innerText="Campo vacio";
+                } else {
+                    document.getElementById("Error1").innerText="";
+                }
+                if(ClaveUsuario === ""){
+                    document.getElementById("Error2").innerText="Campo vacio";
+                } else {
+                    document.getElementById("Error2").innerText="";
+                }
+                if(NombreUsuario.length < 6 ){
+                    document.getElementById("Error3").innerText="Nombre demasiado corto";
+                } else {
+                    document.getElementById("Error3").innerText="";
+                }
+                if(ClaveUsuario.length < 6 ){
+                    document.getElementById("Error4").innerText="Contarseña demasiada corta";
+                } else {
+                    document.getElementById("Error4").innerText="";
+                }
+                if (ClaveUsuario.length > 10) {
+                    document.getElementById("Error5").innerText="Contarseña demasiada Larga";
+                } else {
+                    document.getElementById("Error5").innerText="";
+                }   
+                
+            }
+            </script>
 </form>
 </div>
 <script>
@@ -58,3 +154,4 @@
         });
     })
 </script>
+

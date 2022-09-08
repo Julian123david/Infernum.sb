@@ -29,7 +29,7 @@
     <br>
     <center>
     <div class="envio">
-        <button class="envio">Guardar</button>
+        <button onclick="javascript:return  confirm('¿Seguro de editar este ROL?');" class="envio">Guardar</button>
     </div>
     </center>
 </form>

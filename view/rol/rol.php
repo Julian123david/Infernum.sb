@@ -1,4 +1,5 @@
 <link rel="stylesheet" type="text/css" href="../css/view.css">
+<<<<<<< HEAD
 <script type="text/javascript" src="js/buscador.js"></script>
 
  
@@ -22,6 +23,10 @@ body {font-family: Arial, Helvetica, sans-serif;}
 body {font-family: Arial, Helvetica, sans-serif;}
  
 
+=======
+<style type="text/css">
+    
+>>>>>>> 4350297f9ea70579e6b0aea20c8e41acd5170996
 </style>
 
 <h1 class="Titulo">Rol</h1>
@@ -51,7 +56,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                 <a href="?c=Rol&a=Crud&IdRol=<?php echo $r->IdRol; ?>"><img class="edit" src="img/edit.png"></a>
             </td>
             <td>
-                <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?c=Rol&a=Eliminar&IdRol=<?php echo $r->IdRol; ?>"><img class="delete" src="img/delete.png"></a>
+                <a onclick="javascript:return confirm('¿Seguro de eliminar este ROL?');" href="?c=Rol&a=Eliminar&IdRol=<?php echo $r->IdRol; ?>"><img class="delete" src="img/delete.png"></a>
             </td>
         </tr>
         <tr class='noSearch hide'>

@@ -1,5 +1,10 @@
 <link rel="stylesheet" type="text/css" href="../css/view.css">
+<<<<<<< HEAD
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+=======
+<script src="js/alertas.js"></script>
+
+>>>>>>> 4350297f9ea70579e6b0aea20c8e41acd5170996
 </script>
 
 <script type="text/javascript" src="js/buscador.js"></script>
@@ -64,8 +69,10 @@ body {font-family: Arial, Helvetica, sans-serif;}
 </a>
             </td>
             <td>
+                
                 <a onclick="javascript:return  confirm('¿Seguro de eliminar este registro?');" href="?c=Usuario&a=Eliminar&IdUsuario=<?php echo $r->IdUsuario; ?>">                    
                 <img class="delete" src="img/delete.png">
+    
 </a>
             </td>
         </tr>
@@ -79,4 +86,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 </table> 
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4350297f9ea70579e6b0aea20c8e41acd5170996

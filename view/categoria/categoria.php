@@ -1,6 +1,7 @@
 <link rel="stylesheet" type="text/css" href="../css/view.css">
 <script type="text/javascript" src="js/buscador.js"></script>
 
+<<<<<<< HEAD
  
 <style>
  datos {border:1px solid #ccc;padding:10px;font-size:1em;}
@@ -24,6 +25,30 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
 </style>
 <h1 class="page-header">Categoria</h1>
+=======
+
+<style type="text/css">
+    .btnvolver{
+        background-color:#897BFF;
+        float:right;
+        margin-right: 50px;
+        text-align: center;
+        padding: 5 20px;
+        border-radius: 0 0 5px 5px;
+    }
+    .btnvolver > a{
+        text-decoration: none;
+        color: white;
+        font-size: 150%;
+
+    }
+    .btnvolver:hover{
+        background-color: #6A59FE;
+    }
+</style>
+<div class="btnvolver"><a href="javascript:history.back()"> Volver</a></div>
+<h1 class="h1">Categoria</h1>
+>>>>>>> 4350297f9ea70579e6b0aea20c8e41acd5170996
 
 <br>
 <div class="NewUserdiv">
@@ -35,7 +60,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 <table class="tabla" id="datos">
     <thead>
         <tr class="tr">
-            <th>Id</th>
+            <th class="th_left">Id</th>
             <th>Descripcion</th>
             <th>Nombre</th>
             <th style="width:60px;"></th>
@@ -53,7 +78,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 </a>
             </td>
             <td>
-                <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?c=Categoria&a=Eliminar&IdCategoria=<?php echo $r->IdCategoria; ?>">                <img class="delete" src="img/delete.png">
+                <a onclick="javascript:return confirm('¿Seguro de eliminar esta categoria?');" href="?c=Categoria&a=Eliminar&IdCategoria=<?php echo $r->IdCategoria; ?>">                <img class="delete" src="img/delete.png">
 </a>
             </td>
         </tr>

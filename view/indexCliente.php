@@ -12,7 +12,7 @@
 	<nav class="menu1">
 		<ul class="ul">
 			<li><a href=""><img class="logo" src="img/logo.png"></a></li>
-			<li><a href="http://localhost/intento/view/gerente.php" ><p>HOME</p></a></li>
+			<li><a href="gerente.php" ><p>HOME</p></a></li>
 			<li><a href="" ><p>ROPA</p></a></li>
 			<li><a href="" ><p>NOSOTROS</p></a></li>
 			<!--<li><a href=""><img class="logo2" src="img/buscar.png"></a></li>-->
