@@ -1,7 +1,27 @@
 <link rel="stylesheet" type="text/css" href="../css/view.css">
 
-<h1 class="Titulo">Pedido</h1>
 
+<style type="text/css">
+    .btnvolver{
+        background-color:#897BFF;
+        float:right;
+        margin-right: 50px;
+        text-align: center;
+        padding: 5 20px;
+        border-radius: 0 0 5px 5px;
+    }
+    .btnvolver > a{
+        text-decoration: none;
+        color: white;
+        font-size: 150%;
+
+    }
+    .btnvolver:hover{
+        background-color: #6A59FE;
+    }
+</style>
+<div class="btnvolver"><a href="javascript:history.back()"> Volver</a></div>
+<h1 class="Titulo">Pedido</h1>
 <br>
 <div class="NewUserdiv">
 <a  href="?c=Pedido&a=Crud1">

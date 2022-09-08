@@ -10,17 +10,20 @@
 	text-decoration: none;
 	border: none;
 	background-color: #5E6EB2;
-	color: white;
+	color: black;
 	font-size: 130%;
 	padding: 7px;
-	width: 170px;
+	width: 270px;
 	border-radius: 15px;
+	font-weight: bold;
+	
 }
 .NewUserdiv{
 	width: 100%;
 	display: flex;
 	justify-content: space-evenly;
-	margin-bottom: 50px;
+	margin-top: 50px;
+
 }
 .buscar{
 	padding: 10px;
@@ -30,6 +33,7 @@
 	background-color: #dadce8;
 	border: none;
 	font-size: 110%;
+	margin-left: 11%;
 }
 .NewUser:hover{
 	background-color: #515E97;
@@ -41,25 +45,50 @@
 /*Tabla*/
 .tabla{
 	border-color: black 1px solid;
-	border: black 3px solid;
 	border-spacing: 0;
 	margin: auto auto;
 	width: 60%;
 	text-align: center;
 	font-family: sans-serif;
 	font-size: 130%;
+	border-radius: 15px;
+	-moz-border-radius: 20px;
+	border:black 2px solid;
+	
+	-moz-border-radius: 20px; 
+    -webkit-border-radius: 20px; 
+    border-radius: 20px; 
+    -webkit-box-shadow: 13px 15px 10px 1px rgba(0,0,0,0.62);
+-moz-box-shadow: 13px 15px 10px 1px rgba(0,0,0,0.62);
+box-shadow: 13px 15px 10px 1px rgba(0,0,0,0.62);
+    margin-top: -1px;
+}
+
+th:first-child { 
+    border-top-left-radius: 17px; 
+}
+th:last-child {   
+    border-top-right-radius: 17px; 
+}
+tr:last-child td:first-child { 
+    border-bottom-left-radius: 17px; 
+}
+tr:last-child td:last-child { 
+    border-bottom-right-radius: 17px; 
+}
+tr:nth-child(even) {
+  background-color: #D8D8E6;
 }
 
 .tr{
 	background-color: #5E6EB2;
 }
 .tr2 td{
-	border:1px solid;
+	
 	padding:5px ;
 }
 .tr th{
-	border:1px solid;
-	padding:5px;
+	padding: 10px 5px;	
 }
 th p{
 	color: white;
@@ -81,4 +110,9 @@ th p{
 	height: 50px;
 	margin: auto auto;
 }
+.h1{
+	text-align: center;
+	font-family: Arial	;
+}
+
 

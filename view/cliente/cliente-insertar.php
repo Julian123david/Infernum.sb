@@ -47,37 +47,38 @@ input, input:valid {
     <input type="hidden" name="IdCliente" value="<?php echo $alm->IdCliente; ?>" />
 
      <div class="nombre">
-        <input type="number" name="IdUsuario" value="<?php echo $alm->IdUsuario; ?>" class="input" placeholder="idUsuario " required="IdUsuario" />
-        <br>
-        <label id="Error1" class="error" style="color:red"></label>
+        <label class="label">IdUsuario:</label>
+        <input type="number" name="IdUsuario" value="<?php echo $alm->IdUsuario; ?>" class="input" placeholder="Ingrese " required="IdUsuario" />
     </div>   
     
     <div class="nombre">
-        <input type="text" name="NombreCliente" value="<?php echo $alm->NombreCliente; ?>" class="input"  placeholder="Ingrese su nombre" required="required" minlength="4" maxlength="30" />
-        <br>
-        <label id="Error1" class="error" style="color:red"></label>
+        <label class="label">Nombre:</label>
+        <input type="text" name="NombreCliente" value="<?php echo $alm->NombreCliente; ?>" class="input" placeholder="Ingrese su nombre" required="required" minlength="5" maxlength="255" />
     </div>
     
     <div class="nombre">
-        <input type="text" name="ApellidoCliente" value="<?php echo $alm->ApellidoCliente; ?>"  class="input" placeholder="Ingrese Apellido" required="required" minlength="4" maxlength="30"  />
-        <br>
-        <label id="Error1" class="error" style="color:red"></label>
+        <label class="label">Apellido:</label>
+        <input type="text" name="ApellidoCliente" value="<?php echo $alm->ApellidoCliente; ?>" class="input" placeholder="Ingrese Apellido" required="required" minlength="5" maxlength="255"  />
     </div>
 
     <div class="nombre">
-        <input type="text" name="DireccionCliente" value="<?php echo $alm->DireccionCliente; ?>" class="input" placeholder="Ingrese Direccion" required="required" minlength="6" maxlength="30" />
+        <label class="label">Direccion:</label>
+        <input type="text" name="DireccionCliente" value="<?php echo $alm->DireccionCliente; ?>" class="input" placeholder="Ingrese Direccion" required="required" minlength="5" maxlength="255" />
     </div>
     
     <div class="nombre">
-        <input type="number" name="TelefonoCliente" value="<?php echo $alm->TelefonoCliente; ?>"  minlength="6" class="input" placeholder="Ingrese Telefono " required="required" />
+        <label class="label">Telefono:</label>
+        <input type="number" name="TelefonoCliente" value="<?php echo $alm->TelefonoCliente; ?>" class="input" placeholder="Ingrese Telefono " required="required" />
     </div>
 
     <div class="nombre">
-        <input type="number" name="NumDocCliente" value="<?php echo $alm->NumDocCliente; ?>" class="input" placeholder="Ingrese Numero de documento" required="required" />
+        <label class="label">Documento:</label>
+        <input type="number" name="NumDocCliente" value="<?php echo $alm->NumDocCliente; ?>" class="input" placeholder="Ingrese Numero de documento" required="required" minlength="3"/>
     </div>
 
     <div class="nombre">
-        <input type="text" name="CorreoCliente" value="<?php echo $alm->CorreoCliente; ?>" title="valor@valor.valor" class="input" placeholder="Ingrese Correo" required="required" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}"/>
+        <label class="label">Correo:</label>
+        <input type="text" name="CorreoCliente" value="<?php echo $alm->CorreoCliente; ?>" class="input" placeholder="Ingrese Correo" required="required" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" title="El correo debe se valor@valor.valor"/>
     </div>
 
 
@@ -89,27 +90,31 @@ input, input:valid {
         <button id="button" onmouseover="validar()">Guardar</button>
     </div>
     </center>
-    <script type="text/javascript">
-            function validar(){
-                var NombreCliente = document.Pru.NombreCliente.value;
-                var ApellidoCliente = document.Pru.ApellidoCliente.value;
-                var DireccionCliente = document.Pru.DireccionCliente.value;
-                var TelefonoCliente = document.Pru.TelefonoCliente.value;
-                var NumDocCliente = document.Pru.NumDocCliente.value;
-                var CorreoCliente = document.Pru.CorreoCliente.value;
+<script type="text/javascript">
 
-                if(NombreCliente === "" || ApellidoCliente === "" || ApellidoCliente === ""){
-                    document.getElementById("Error1").innerText="*Error, campo vacio";
+
+            const expresiones = {
+                usuario: /^[a-zA-Z0-9\_\-]{4,16} /
+            }
+
+            function validar(){
+                var NombreUsuario = document.Pru.NombreUsuario.value;
+                var ClaveUsuario = document.Pru.ClaveUsuario.value;
+
+
+
+                if(NombreUsuario === ""){
+                    document.getElementById("Error1").innerText="Campo vacio";
                 } else {
                     document.getElementById("Error1").innerText="";
                 }
                 if(ClaveUsuario === ""){
-                    document.getElementById("Error2").innerText="*Error, campo vacio";
+                    document.getElementById("Error2").innerText="Campo vacio";
                 } else {
                     document.getElementById("Error2").innerText="";
                 }
                 if(NombreUsuario.length < 6 ){
-                    document.getElementById("Error3").innerText="*Error, nombre demasiado corto";
+                    document.getElementById("Error3").innerText="Nombre demasiado corto";
                 } else {
                     document.getElementById("Error3").innerText="";
                 }
@@ -118,6 +123,11 @@ input, input:valid {
                 } else {
                     document.getElementById("Error4").innerText="";
                 }
+                if (ClaveUsuario.length > 10) {
+                    document.getElementById("Error5").innerText="Contarseña demasiada Larga";
+                } else {
+                    document.getElementById("Error5").innerText="";
+                }   
                 
             }
             </script>

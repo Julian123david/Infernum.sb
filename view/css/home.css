@@ -1,0 +1,29 @@
+.container{
+	display: flex;
+	width: 80%;
+	background-color: #EBEBF1;
+	justify-content: space-evenly;
+	margin: auto auto ;
+	padding: 10px;
+	border-radius: 10px;
+	font-family: sans-serif;
+}
+
+.container  a{
+	text-decoration: none;
+	color: black;
+}
+
+h2{
+	margin-left: 10%;
+	margin-top: 4%;
+
+}
+.divImage{
+	display: grid;
+	place-items: center;
+	margin-top: 2%;
+}
+.divImage > img{
+	margin: auto auto;
+}

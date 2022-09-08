@@ -7,7 +7,7 @@
     font-family: Verdana;
 }
 .error{
-    margin-left: 10%;
+    margin-left: 17%;
     margin-top: -20px;
     float: left;
     background-color: rgba(255, 0, 0, 0.1);
@@ -33,6 +33,7 @@ input, input:valid {
     border-bottom-color: green; 
 }
 </style>
+
 <h1 class="Titulo">
     <?php echo $alm->IdUsuario != null ? $alm->NombreUsuario : 'Nuevo Usuario'; ?>
 </h1>
@@ -47,17 +48,20 @@ input, input:valid {
     <input type="hidden" name="IdUsuario" value="<?php echo $alm->IdUsuario; ?>" />
     
     <div class="nombre">
+        <label class="label">Nombre:</label>
         <input type="text" name="NombreUsuario" value="<?php echo $alm->NombreUsuario; ?>" class="input" placeholder="Nombre Usuario" required  minlength="6" maxlength="35"/> 
         <br>
         <label id="Error1" class="error" style="color:red"></label>
         <br>
         <label id="Error3" class="error" style="color:red"></label>
     </div>
-    
+    <br><br>
     <div class="nombre">
+        <label class="label">Contraseña:</label>
         <input type="password" name="ClaveUsuario" value="<?php echo $alm->ClaveUsuario; ?>" class="input" placeholder="Clave Usuario" required="required" minlength="6" maxlength="15" /><br>
         <label id="Error2" class="error" style="color:red"></label><br>
-        <label id="Error4" class="error" style="color:red"></label>
+        <label id="Error4" class="error" style="color:red"></label><br>
+        <label id="Error5" class="error" style="color:red"></label><br>
     </div>
 
     <div class="nombre">
@@ -83,7 +87,9 @@ input, input:valid {
     <div class="botondiv">
         <button id="button" onmouseover="validar()">Guardar  </button>
         <input type="hidden" value="1" name="opcion"><br><br>
+        
     </div>
+    
     </center>
 
     <td>
@@ -93,6 +99,8 @@ input, input:valid {
             function validar(){
                 var NombreUsuario = document.Pru.NombreUsuario.value;
                 var ClaveUsuario = document.Pru.ClaveUsuario.value;
+
+
 
                 if(NombreUsuario === ""){
                     document.getElementById("Error1").innerText="Campo vacio";
@@ -114,6 +122,11 @@ input, input:valid {
                 } else {
                     document.getElementById("Error4").innerText="";
                 }
+                if (ClaveUsuario.length > 10) {
+                    document.getElementById("Error5").innerText="Contarseña demasiada Larga";
+                } else {
+                    document.getElementById("Error5").innerText="";
+                }   
                 
             }
             </script>

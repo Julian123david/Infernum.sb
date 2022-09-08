@@ -15,7 +15,7 @@
             <th>Id</th>            
             <th>IdUsuario</th>
             <th>NombreCliente</th>
-            <th>ApellidoCliente/th>
+            <th>ApellidoCliente</th>
             <th>DireccionCliente</th>
             <th>TelefonoCliente</th>
             <th>NumDocCliente</th>

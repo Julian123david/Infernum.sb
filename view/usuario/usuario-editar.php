@@ -7,8 +7,18 @@
     font-family: Verdana;
 }
 .error{
-    margin-left: 10%;
+    margin-left: 17%;
     margin-top: -20px;
+    float: left;
+    background-color: rgba(255, 0, 0, 0.1);
+    font-family: Verdana;
+    width: 265px;
+    text-align: center;
+
+}
+.error5{
+    margin-left: 17%;
+    margin-top: -56 px;
     float: left;
     background-color: rgba(255, 0, 0, 0.1);
     font-family: Verdana;
@@ -55,12 +65,13 @@ input, input:valid {
         <br>
         <label id="Error3" class="error" style="color:red"></label>
     </div>
-    
+    <br><br>
     <div class="nombre">
         <label class="label">Contraseña:</label>
         <input type="password" name="ClaveUsuario" value="<?php echo $alm->ClaveUsuario; ?>" class="input" placeholder="Clave Usuario" required="required" minlength="6" maxlength="15" /><br>
         <label id="Error2" class="error" style="color:red"></label><br>
-        <label id="Error4" class="error" style="color:red"></label>
+        <label id="Error4" class="error" style="color:red"></label><br>
+        <label id="Error5" class="error5" style="color:red"></label><br>
     </div>
 
     <div class="nombre">
@@ -84,30 +95,40 @@ input, input:valid {
     <br>
     <center>
     <div class="botondiv">
-        <button id="button" onmouseover="validar()" onclick="javascript:return  confirm('¿Seguro de editar este usuario?');">Guardar</button>
-        <p class="warning" id="warnings"></p>
+        <button id="button" onmouseover="validar()" onclick="javascript:return  confirm('¿Seguro de editar este usuario?');">Guardar  </button>
+        <input type="hidden" value="1" name="opcion"><br><br>
+        
     </div>
+    
     </center>
 
     <td>
             </td>
-            <script type="text/javascript">
+<script type="text/javascript">
+
+
+            const expresiones = {
+                usuario: /^[a-zA-Z0-9\_\-]{4,16} /
+            }
+
             function validar(){
                 var NombreUsuario = document.Pru.NombreUsuario.value;
                 var ClaveUsuario = document.Pru.ClaveUsuario.value;
 
+
+
                 if(NombreUsuario === ""){
-                    document.getElementById("Error1").innerText="*Error, campo vacio";
+                    document.getElementById("Error1").innerText="Campo vacio";
                 } else {
                     document.getElementById("Error1").innerText="";
                 }
                 if(ClaveUsuario === ""){
-                    document.getElementById("Error2").innerText="*Error, campo vacio";
+                    document.getElementById("Error2").innerText="Campo vacio";
                 } else {
                     document.getElementById("Error2").innerText="";
                 }
                 if(NombreUsuario.length < 6 ){
-                    document.getElementById("Error3").innerText="*Error, nombre demasiado corto";
+                    document.getElementById("Error3").innerText="Nombre demasiado corto";
                 } else {
                     document.getElementById("Error3").innerText="";
                 }
@@ -116,6 +137,11 @@ input, input:valid {
                 } else {
                     document.getElementById("Error4").innerText="";
                 }
+                if (ClaveUsuario.length > 10) {
+                    document.getElementById("Error5").innerText="Contarseña demasiada Larga";
+                } else {
+                    document.getElementById("Error5").innerText="";
+                }   
                 
             }
             </script>
