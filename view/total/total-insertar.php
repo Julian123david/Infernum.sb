@@ -55,7 +55,7 @@ $link = new PDO('mysql:host=localhost;dbname=proyecto', 'root', ''); // el campo
     </div>
 
     <div class="nombre">
-        <input type="number" name="PrecioUnitario" value="<?php echo $item["vai_pre"]; ?>" class="input" placeholder="Ingrese precio Unitario" required="required"  readonly/>
+        <input type="number" name="PrecioUnitario" value="<?php echo $item["vai_pre"]; ?>" class="input" placeholder="Ingrese precio Unitarios" required="required"  readonly/>
     </div>
 
 	<div class="nombre">
