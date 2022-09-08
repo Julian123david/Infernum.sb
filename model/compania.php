@@ -43,7 +43,7 @@ class Compania
 		try 
 		{
 			$stm = $this->pdo
-			          ->prepare("SELECT * FROM CompaniaEnvio WHERE IdIdCompaniaEnvio = ?");
+			          ->prepare("SELECT * FROM CompaniaEnvio WHERE IdCompaniaEnvio = ?");
 			          
 
 			$stm->execute(array($IdCompaniaEnvio));
@@ -72,16 +72,16 @@ class Compania
 	{
 		try 
 		{
-			$sql = "UPDATE Compania SET 
+			$sql = "UPDATE CompaniaEnvio SET 
 						NombreCompamia      = ?,
                         TelefonoCompania = ?
-				    WHERE IdCompaniaEncio = ?";
+				    WHERE IdCompaniaEnvio = ?";
 
 			$this->pdo->prepare($sql)
 			     ->execute(
 				    array(
                         $data->NombreCompamia, 
-                        $data->TelofonoCompania,
+                        $data->TelefonoCompania,
                         $data->IdCompaniaEnvio
 					)
 				);

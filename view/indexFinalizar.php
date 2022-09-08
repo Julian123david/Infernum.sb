@@ -28,7 +28,7 @@
 <?php
 require_once '../model/databases.php';
 
-$controller = 'pedido';
+$controller = 'finalizar';
 
 // Todo esta lógica hara el papel de un FrontController
 if(!isset($_REQUEST['c']))
@@ -57,7 +57,7 @@ else
 
 <body>
 <br><br><br><br>
-<a href="http://localhost/intento/view/IndexDetalle.php">Detalle Pedido</a>
+
 
 </body>
 </html>

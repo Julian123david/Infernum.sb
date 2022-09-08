@@ -9,13 +9,32 @@
 <li><a class="Volver" href="IndexPedido.php">Pedidos Registrados</a></li>
 
 </ol>
-
-
+                
+ 
 <form id="frm-pedido" action="?c=Pedido&a=Guardar" method="post" enctype="multipart/form-data">
     <input type="hidden" name="IdPedido" value="<?php echo $alm->IdPedido; ?>" />
+      
+    <p class="trigger">Ver Detalle Del Pedido </p>
+        <div class="modal">
+            <div class="modal-content">
+                <span class="close-button">×</span>
+                    <h1>Detalle del Pedido</h1>
+                   
+
+            <p><?php echo $alm->CantidadProducto; ?></p>          
+            <p><?php echo $alm->PrecioUnitario; ?></p>  
+            <p><?php echo $alm->DescuentoPedido; ?></p>  
+            <p><?php echo $alm->IdPedido; ?></p>  
+            <p><?php echo $alm->id; ?></p>  
+
+
+            </div>
+        </div>
+ 
 
      <div class="nombre">
         <input type="text" name="IdEmpleado" value="<?php echo $alm->IdEmpleado; ?>" class="input" placeholder="Ingrese IdEmpleado" required="required" />
+
     </div>   
     
     <div class="nombre">
@@ -69,4 +88,70 @@
             return $(this).validate();
         });
     })
+</script>
+<style>
+    .modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem 1.5rem;
+    width: 24rem;
+    border-radius: 0.5rem;
+}
+
+.close-button {
+    float: right;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: lightgray;
+}
+
+.close-button:hover {
+    background-color: darkgray;
+}
+
+.show-modal {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+</style>
+
+<script>
+    const modal = document.querySelector(".modal");
+const trigger = document.querySelector(".trigger");
+const closeButton = document.querySelector(".close-button");
+
+function toggleModal() {
+    modal.classList.toggle("show-modal");
+}
+
+function windowOnClick(event) {
+    if (event.target === modal) {
+        toggleModal();
+    }
+}
+
+trigger.addEventListener("click", toggleModal);
+closeButton.addEventListener("click", toggleModal);
+window.addEventListener("click", windowOnClick);
 </script>

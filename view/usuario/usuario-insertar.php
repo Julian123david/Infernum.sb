@@ -9,7 +9,7 @@
 <li><a class="Volver" href="IndexUsuario.php">Usuarios Registrados</a></li>
 
 </ol>
-
+<section class="form-register">
 <form id="frm-usuario" action="?c=Usuario&a=Guardar" method="post" enctype="multipart/form-data" name="Pru">
     <input type="hidden" name="IdUsuario" value="<?php echo $alm->IdUsuario; ?>" />
     
@@ -19,7 +19,7 @@
     </div>
     
     <div class="nombre">
-        <input type="text" name="ClaveUsuario" value="<?php echo $alm->ClaveUsuario; ?>" class="input" placeholder="Clave Usuario" required="required" minlength="7" maxlength="15" /><br>
+        <input type="text" name="ClaveUsuario" value="<?php echo $alm->ClaveUsuario; ?>" class="input" placeholder="Clave Usuario"  minlength="7" maxlength="15" /><br>
         <label id="Error2" style="color:red"></label>
     </div>
 
@@ -44,13 +44,10 @@
     <br>
     <center>
     <div class="botondiv">
-        <button id="button" onmouseover="validar()">Guardar  </button>
+        <button id="button" onmouseover="validar()"> Guardar  </button>
         <input type="hidden" value="1" name="opcion"><br><br>
     </div>
     </center>
-
-    <td>
-            </td>
 
 <script type="text/javascript">
             function validar(){
@@ -62,20 +59,14 @@
                 } else {
                     document.getElementById("Error1").innerText="";
                 }
+
                 if(ClaveUsuario === ""){
                     document.getElementById("Error2").innerText="*Error, campo vacio";
                 } else {
                     document.getElementById("Error2").innerText="";
                 }
-                
-            }
+                            }
             </script>
 </form>
 </div>
-<script>
-    $(document).ready(function(){
-        $("#frm-usuario").submit(function(){
-            return $(this).validate();
-        });
-    })
-</script>
+</section>

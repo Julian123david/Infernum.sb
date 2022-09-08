@@ -1,16 +1,15 @@
 <?php
-class Detalle
+class Detalles
 {
 	private $pdo;
     
+	public $IdDetalle;
     public $CantidadProducto;	
 	public $PrecioUnitario;
     public $DescuentoPedido;
     public $IdPedido;
-	public $IdProducto;
+	public $id;
 
-
-	
 	public function __CONSTRUCT()
 	{
 		try
@@ -41,15 +40,15 @@ class Detalle
 		}
 	}
 
-	public function Obtener($IdPedido)
+	public function Obtener($IdDetalle)
 	{
 		try 
 		{
 			$stm = $this->pdo
-			          ->prepare("SELECT * FROM DetallePedido WHERE IdPedido = ?");
+			          ->prepare("SELECT * FROM Empleado WHERE IdDetalle = ?");
 			          
 
-			$stm->execute(array($IdPedido));
+			$stm->execute(array($IdDetalle));
 			return $stm->fetch(PDO::FETCH_OBJ);
 		} catch (Exception $e) 
 		{
@@ -57,14 +56,14 @@ class Detalle
 		}
 	}
 
-	public function Eliminar($IdPedido)
+	public function Eliminar($IdDetalle)
 	{
 		try 
 		{
 			$stm = $this->pdo
-			            ->prepare("DELETE FROM DetallePedido WHERE IdPedido = ?");			          
+			            ->prepare("DELETE FROM DetallePedido WHERE IdDetalle = ?");			          
 
-			$stm->execute(array($IdPedido));
+			$stm->execute(array($IdDetalle));
 		} catch (Exception $e) 
 		{
 			die($e->getMessage());
@@ -79,19 +78,21 @@ class Detalle
 						CantidadProducto = ?,
 						PrecioUnitario = ?,
                         DescuentoPedido  = ?,
-						IdProducto = ?
+						IdPedido = ?,
+						id =?
 
-				    WHERE IdPedido= ?";
+				    WHERE IdDetalle = ?";
 
 			$this->pdo->prepare($sql)
 			     ->execute(
-				    array(						
+				    array(			
+		
 						$data->CantidadProducto,
                         $data->PrecioUnitario, 
                         $data->DescuentoPedido,
-						$data->IdProducto,
-
-                        $data->IdPedido
+						$data->id,
+                        $data->IdPedido,
+						$data->IdDetalle	
 					)
 				);
 		} catch (Exception $e) 
@@ -100,22 +101,21 @@ class Detalle
 		}
 	}
 
-	public function Registrar(Detalle $data)
+	public function Registrar(Detalles $data)
 	{
 		try 
 		{
-		$sql = "INSERT INTO DetallePedido( CantidadProducto, PrecioUnitario, DescuentoPedido, IdPedido, IdProducto) 
+		$sql = "INSERT INTO DetallePedido (CantidadProducto, PrecioUnitario, DescuentoPedido ,IdPedido , id) 
 		        VALUES (?, ?, ?, ?,?)";
 
 		$this->pdo->prepare($sql)
 		     ->execute(
 				array(					
-					$data->CantidadProducto,
-					$data->PrecioUnitario, 	
-
-					$data->DescuentoPedido,
-					$data->IdPedido,
-					$data->IdProducto
+                    $data->CantidadProducto,
+                    $data->PrecioUnitario, 
+                    $data->DescuentoPedido,
+                    $data->IdPedido,
+                    $data->id,
 
                 )
 			);

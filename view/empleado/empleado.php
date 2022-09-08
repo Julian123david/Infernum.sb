@@ -1,14 +1,35 @@
 <link rel="stylesheet" type="text/css" href="../css/view.css">
+<script type="text/javascript" src="js/buscador.js"></script>
+<style>
+ datos {border:1px solid #ccc;padding:10px;font-size:1em;}
+ 
+datos tr:nth-child(even) {background:#ccc;}
+ 
+datos td {padding:5px;}
+ 
+datos tr.noSearch {background:White;font-size:0.8em;}
+ 
+datos tr.noSearch td {padding-top:10px;text-align:right;}
+ 
+.hide {display:none;}
+ 
+.red {color:Red;}
+ 
+body {font-family: Arial, Helvetica, sans-serif;}
+ 
+body {font-family: Arial, Helvetica, sans-serif;}
+ 
+</style>
 <h1 class="Titulo">Empleados Registrados</h1>
 
 <br>
 <div class="NewUserdiv">
 <a  href="?c=Empleado&a=Crud1">
     <input class="NewUser" type="button" value="Nuevo Empleado"> </a> 
-    <input class="buscar" type="text" placeholder="BuscarEmpleado">
+    <input class="buscar" type="text" placeholder="Buscar Empleado" id="searchTerm" onkeyup="doSearch()" >
 </div>
 <br>
-<table class="tabla">
+<table class="tabla" id="datos">
     <thead>
         <tr class="tr">
             <th>Id</th>            
@@ -43,6 +64,11 @@
                 <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?c=Empleado&a=Eliminar&IdEmpleado=<?php echo $r->IdEmpleado; ?>"><img class="delete" src="img/delete.png"></a>
             </td>
         </tr>
+        <tr class='noSearch hide'>
+
+<td colspan="5"></td>
+
+</tr>
     <?php endforeach; ?>
     </tbody>
 </table> 

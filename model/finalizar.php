@@ -1,8 +1,10 @@
 <?php
-require_once 'detalles.php';
+require_once '../controller/finalizar.controller.php';
+?>	
 
 
-class Pedido
+<?php
+class Finalizar
 {
 	private $pdo;
     
@@ -15,6 +17,11 @@ class Pedido
 	public $DireccionEntrega;
     public $TotalPedido;
     public $EstadoPedido;
+    public $MetodoPago;
+	public $CantidadProducto;
+	public $PrecioUnitario;
+    public $DescuentoPedido;
+	public $id;	
 
 	
 	public function __CONSTRUCT()
@@ -36,7 +43,7 @@ class Pedido
 		{
 			$result = array();
 
-			$stm = $this->pdo->prepare("SELECT * from Pedido ");
+			$stm = $this->pdo->prepare("SELECT * FROM Pedido");
 			$stm->execute();
 
 			return $stm->fetchAll(PDO::FETCH_OBJ);
@@ -47,13 +54,10 @@ class Pedido
 		}
 	}
 
-
-
 	public function Obtener($IdPedido)
 	{
 		try 
 		{
-
 			$stm = $this->pdo
 			          ->prepare("SELECT * FROM Pedido WHERE IdPedido = ?");
 			          
@@ -65,8 +69,6 @@ class Pedido
 			die($e->getMessage());
 		}
 	}
-
-
 
 	public function Eliminar($IdPedido)
 	{
@@ -81,9 +83,6 @@ class Pedido
 			die($e->getMessage());
 		}
 	}
-
-	
-
 
 	public function Actualizar($data)
 	{
@@ -125,8 +124,8 @@ class Pedido
 		}
 	}
 
-	public function Registrar(Pedido $data)
-	{
+	public function Registrar(Finalizar $data)
+	{  
 		try 
 		{
 		$sql = "INSERT INTO Pedido ( IdEmpleado ,  
@@ -138,7 +137,7 @@ class Pedido
         TotalPedido,
         EstadoPedido ,
         MetodoPago) 
-		        VALUES (?, ?, ?, ?,?,?, ? ,? ,?)";
+		        VALUES (?, ?,? ,? , ? ,?, ?,? ,?)";
 
 		$this->pdo->prepare($sql)
 		     ->execute(
@@ -147,12 +146,11 @@ class Pedido
                     $data->IdCliente, 
                     $data->IdCompaniaEnvio,
                     $data->FechaPedido,
-                    $data->FechaEnvio,
+                    $data->FechaEnvio ,
                     $data->DireccionEntrega,
                     $data->TotalPedido,
                     $data->EstadoPedido,
                     $data->MetodoPago,
-
                 )
 			);
 		} catch (Exception $e) 
@@ -160,6 +158,5 @@ class Pedido
 			die($e->getMessage());
 		}
 	}
-}
-?>
 
+}

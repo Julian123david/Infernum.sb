@@ -2,12 +2,11 @@
 <head>
     <title>Infernum.sb</title>
     <link rel="shortcut icon" href="..\img\celular.jpg">
-    <link rel="stylesheet" type="text/css" href="css/view.css">
     <link rel="stylesheet" href="../view/nav/nav.css">
   </head>  
     
     <body>
-
+      
     <header>
 	<nav class="menu1">
 		<ul class="ul">
@@ -25,10 +24,13 @@
 	</nav>
 </header>
 
+
+
+
 <?php
 require_once '../model/databases.php';
 
-$controller = 'pedido';
+$controller = 'total';
 
 // Todo esta lógica hara el papel de un FrontController
 if(!isset($_REQUEST['c']))
@@ -57,7 +59,6 @@ else
 
 <body>
 <br><br><br><br>
-<a href="http://localhost/intento/view/IndexDetalle.php">Detalle Pedido</a>
 
 </body>
 </html>

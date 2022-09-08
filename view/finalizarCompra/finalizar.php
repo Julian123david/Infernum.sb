@@ -1,35 +1,15 @@
 <link rel="stylesheet" type="text/css" href="../css/view.css">
-<script type="text/javascript" src="js/buscador.js"></script>
-<style>
- datos {border:1px solid #ccc;padding:10px;font-size:1em;}
- 
-datos tr:nth-child(even) {background:#ccc;}
- 
-datos td {padding:5px;}
- 
-datos tr.noSearch {background:White;font-size:0.8em;}
- 
-datos tr.noSearch td {padding-top:10px;text-align:right;}
- 
-.hide {display:none;}
- 
-.red {color:Red;}
- 
-body {font-family: Arial, Helvetica, sans-serif;}
- 
-body {font-family: Arial, Helvetica, sans-serif;}
- 
-</style>
+
 <h1 class="Titulo">Pedido</h1>
 
 <br>
 <div class="NewUserdiv">
-<a  href="?c=Pedido&a=Crud1">
+<a  href="?c=Finalizar&a=Crud1">
     <input class="NewUser" type="button" value="Nuevo Pedido"> </a> 
-    <input class="buscar" type="text" placeholder="Buscar Pedido" id="searchTerm" onkeyup="doSearch()">
+    <input class="buscar" type="text" placeholder="BuscarPedido">
 </div>
 <br>
-<table class="tabla" id="datos">
+<table class="tabla">
     <thead>
         <tr class="tr">
             <th>Id</th>            
@@ -62,7 +42,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
 
             <td>
-                <a href="?c=Pedido&a=Crud&IdPedido=<?php echo $r->IdPedido; ?>"> <img class="edit" src="img/edit.png">
+                <a href="?c=Pedido&a=Crud&IdPedido=<?php echo $r->IdPedido; ?>">                <img class="edit" src="img/edit.png">
 </a>
             </td>
             <td>
@@ -70,11 +50,6 @@ body {font-family: Arial, Helvetica, sans-serif;}
 </a>
             </td>
         </tr>
-        <tr class='noSearch hide'>
-
-<td colspan="5"></td>
-
-</tr>
     <?php endforeach; ?>
     </tbody>
 </table> 

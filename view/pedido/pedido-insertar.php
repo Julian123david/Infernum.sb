@@ -27,11 +27,13 @@
     </div>
 
     <div class="nombre">
-        <input type="date" name="FechaPedido" value="<?php echo $alm->FechaPedido; ?>" class="input" placeholder="Ingrese " required="required" />
+        <input type="date" name="FechaPedido" value="<?php echo $alm->FechaPedido; ?>" class="input" placeholder="Ingrese " required="required"  max="<?php echo date("Y-m-d",strtotime(date("Y-m-d")."+ 15 days"));?>" 
+  min = "<?php echo date("Y-m-d",strtotime(date("Y-m-d")."+ 7 days"));?>"/>
     </div>
     
     <div class="nombre">
-        <input type="date" name="FechaEnvio" value="<?php echo $alm->FechaEnvio; ?>" class="input" placeholder="Ingrese " required="required" />
+        <input type="date" name="FechaEnvio" value="<?php echo $alm->FechaEnvio; ?>" class="input" placeholder="Ingrese " required="required" max="<?php echo date("Y-m-d",strtotime(date("Y-m-d")."+ 0 days"));?>" 
+  min = "<?php echo date("Y-m-d");?>"/>
     </div>
 
     <div class="nombre">

@@ -27,6 +27,8 @@ class PedidoController{
 
     }
 
+
+
     public function Crud1(){
         $alm = new Pedido();
         
@@ -65,3 +67,4 @@ class PedidoController{
         header('Location: indexPedido.php');
     }
 }
+?>

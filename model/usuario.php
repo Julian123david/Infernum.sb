@@ -28,7 +28,7 @@ class Usuario
 		{
 			$result = array();
 
-			$stm = $this->pdo->prepare("SELECT * FROM Usuario");
+			$stm = $this->pdo->prepare("SELECT u.IdUsuario, u.NombreUsuario, u.ClaveUsuario, u.EstadoUsuario, r.rol from Usuario u inner join rol r on u.IdRol = r.IdRol;");
 			$stm->execute();
 
 			return $stm->fetchAll(PDO::FETCH_OBJ);

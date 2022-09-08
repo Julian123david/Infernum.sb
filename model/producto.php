@@ -10,6 +10,7 @@ class Producto
     public $nom;
 	public $pre;
 	public $EstadoProducto;
+	public $NombreCategoria;
 	
 	public function __CONSTRUCT()
 	{
@@ -30,7 +31,8 @@ class Producto
 		{
 			$result = array();
 
-			$stm = $this->pdo->prepare("SELECT * FROM Producto");
+			$stm = $this->pdo->prepare("SELECT p.id, c.NombreCategoria, p.img, p.cod, p.nom, p.pre, p.EstadoProducto from Producto p inner join Categoria c on p.IdCategoria = c.IdCategoria;
+			");
 			$stm->execute();
 
 			return $stm->fetchAll(PDO::FETCH_OBJ);

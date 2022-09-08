@@ -1,7 +1,11 @@
+
+
 <?php
 session_start();
 
 require_once("../model/clase.php");
+
+
 
 $usar_db = new DBControl();
 
@@ -75,6 +79,7 @@ switch($_GET["accion"])
 }
 }
 ?>
+
 <html>
 <meta charset="UTF-8">
 <head>
@@ -105,6 +110,7 @@ switch($_GET["accion"])
 <div><h2>Lista de productos a comprar.</h2></div>
 
 
+
 <?php
 if(isset($_SESSION["items_carrito"]))
 {
@@ -112,41 +118,18 @@ if(isset($_SESSION["items_carrito"]))
     $totprecio = 0;
 ?>	
 
-<table class="tabla">
-<tr class="tr">
-<th style="width:30%">Descripción</th>
-<th style="width:10%">Código</th>
-<th style="width:10%">Cantidad</th>
-<th style="width:10%">Precio x unidad</th>
-<th style="width:10%">Precio</th>
-<th style="width:10%"><a href="indexCarro.php?accion=vacio">Limpiar</a></th>
-</tr>	
 <?php		
     foreach ($_SESSION["items_carrito"] as $item){
         $item_price = $item["txtcantidad"]*$item["vai_pre"];
 		?>
-				<tr class="tr2">
-				<td><img src="<?php echo $item["vai_img"]; ?>" class="imagen_peque" /><?php echo $item["vai_nom"]; ?></td>
-				<td><?php echo $item["vai_cod"]; ?></td>
-				<td><?php echo $item["txtcantidad"]; ?></td>
-				<td><?php echo "$ ".$item["vai_pre"]; ?></td>
-				<td><?php echo "$ ". number_format($item_price,2); ?></td>
-				<td><a href="indexCarro.php?accion=eliminar&eliminarcode=<?php echo $item["vai_cod"]; ?>"> <img class="delete" src="img/delete.png"></a></td>
-				</tr>
+
 				<?php
 				$totcantidad += $item["txtcantidad"];
 				$totprecio += ($item["vai_pre"]*$item["txtcantidad"]);
 		}
 		?>
 
-<tr style="background-color:#f3f3f3">
-<td colspan="2"><b>Total de productos:</b></td>
-<td><b><?php echo $totcantidad; ?></b></td>
-<td colspan="2"><strong><?php echo "$ ".number_format($totprecio, 2); ?></strong></td>
-<td><a href="http://localhost/intento/view/indexFinalizar.php?c=Finalizar&a=Crud1">Pagar</a></td>
-</tr>
-
-</table>		
+		
   <?php
 } else {
 ?>
@@ -157,8 +140,12 @@ if(isset($_SESSION["items_carrito"]))
 }
 ?>
 </div>
-<br><br>
- <a href="productos.php"><input type="submit" value="Seguir comprando" /></a>
+
+
+
+<td><?php echo $totcantidad; ?></td>
+<td><?php echo "$ ".number_format($totprecio, 2); ?></td>
+
 
 </body>
 </html>

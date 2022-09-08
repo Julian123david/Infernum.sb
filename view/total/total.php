@@ -1,13 +1,17 @@
+<link rel="stylesheet" type="text/css" href="css/view.css">
 <h1 class="page-header">Detalle</h1>
 
 <br>
-<div class="envio">
-  <a class="envio" href="?c=Detalle&a=Crud">Detalle</a> 
+<div class="NewUserdiv">
+  <a href="?c=Total&a=Crud1"> 
+  <input class="NewUser" type="button" value="Nuevo Pedido"> </a> 
+    <input class="buscar" type="text" placeholder="Buscar Detalle" id="searchTerm" onkeyup="doSearch()">
 </div>
 <br>
-<table class="table table-striped">
+<table class="tabla " id="datos">
     <thead>
-        <tr>
+        <tr class="tr">
+            <th>IdDetalle</th>
             <th>CantidadProducto</th>            
             <th>PrecioUnitario</th>
             <th>DescuentoPedido</th>
@@ -20,19 +24,18 @@
     </thead>
     <tbody>
     <?php foreach($this->model->Listar() as $r): ?>
-        <tr>
+        <tr class="tr2">
+        <td><?php echo $r->IdDetalle; ?></td>           
             <td><?php echo $r->CantidadProducto; ?></td>          
               <td><?php echo $r->PrecioUnitario; ?></td>
             <td><?php echo $r->DescuentoPedido; ?></td>
             <td><?php echo $r->IdPedido; ?></td>
-            <td><?php echo $r->IdProducto; ?></td>
+            <td><?php echo $r->id; ?></td>
 
             <td>
-                <a href="?c=Detalle&a=Crud&IdPedido=<?php echo $r->IdPedido; ?>">Editar</a>
+                <a href="?c=Total&a=Crud&IdPedido=<?php echo $r->IdPedido; ?>">Editar</a>
             </td>
-            <td>
-                <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?c=Detalle&a=Eliminar&IdPedido=<?php echo $r->IdPedido; ?>">Eliminar</a>
-            </td>
+
         </tr>
     <?php endforeach; ?>
     </tbody>
