@@ -72,7 +72,7 @@ $link = new PDO('mysql:host=localhost;dbname=proyecto', 'root', ''); // el campo
 	}
 ?>
 	<div class="nombre">
-        <input type="number" name="id" value="" class="input" placeholder="Ingrese Id Producto" required="required"  />
+        <input type="number" name="id" value="" class="input" placeholder="Ingrese Id del Producto" required="required"  />
     </div>
 
 
