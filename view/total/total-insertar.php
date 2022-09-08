@@ -51,7 +51,7 @@ $link = new PDO('mysql:host=localhost;dbname=proyecto', 'root', ''); // el campo
     <input type="hidden" name="IdPedido" value="<?php echo $alm->IdPedido; ?>" />
 
     <div class="nombre">
-        <input type="text" name="CantidadProducto" value="<?php echo $totcantidad; ?>" class="input" placeholder="Ingrese Metodo Pago" required="required" readonly/>
+        <input type="text" name="CantidadProducto" value="<?php echo $totcantidad; ?>" class="input" placeholder="Ingrese Metodo Pagos" required="required" readonly/>
     </div>
 
     <div class="nombre">
