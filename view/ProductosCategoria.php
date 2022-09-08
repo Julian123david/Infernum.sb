@@ -12,7 +12,7 @@
 	<nav class="menu1">
 		<ul class="ul">
 			<li><a href=""><img class="logo" src="img/logo.png"></a></li>
-			<li><a href="http://localhost/intento/prueba.php" ><p>HOME</p></a></li>
+			<li><a href="http://localhost/Infernum.sb/prueba.php" ><p>HOME</p></a></li>
 			<li><a href="" ><p>ROPA</p></a></li>
 			<li><a href="" ><p>NOSOTROS</p></a></li>
 			<!--<li><a href=""><img class="logo2" src="img/buscar.png"></a></li>-->
@@ -25,13 +25,13 @@
 	</nav>
 </header>
 <br><br>
-<a href="http://localhost/intento/view/productosCompra/camisetas.php">Camisetas</a>
+<a href="http://localhost/Infernum.sb/view/productosCompra/camisetas.php">Camisetas</a>
 <br><br>
-<a href="http://localhost/intento/view/productosCompra/camisas.php">Camisas</a>
+<a href="http://localhost/Infernum.sb/view/productosCompra/camisas.php">Camisas</a>
 <br><br>
-<a href="http://localhost/intento/view/productosCompra/jeans.php">Jeans</a>
+<a href="http://localhost/Infernum.sb/view/productosCompra/jeans.php">Jeans</a>
 <br><br>
-<a href="http://localhost/intento/view/productosCompra/gorros.php">Gorros</a>
+<a href="http://localhost/Infernum.sb/view/productosCompra/gorros.php">Gorros</a>
 <br><br>
 </body>
 </html>

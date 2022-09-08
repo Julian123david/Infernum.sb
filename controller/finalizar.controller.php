@@ -166,7 +166,7 @@ class FinalizarController{
 		? $this->model->Actualizar($alm)
 		: $this->model->Registrar($alm);
         
-        header('Location: http://localhost/intento/view/indexTotal.php?c=Total&a=Crud1');
+        header('Location: http://localhost/Infernum.sb/view/indexTotal.php?c=Total&a=Crud1');
     }
     
     public function Eliminar(){

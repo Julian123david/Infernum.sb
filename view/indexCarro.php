@@ -87,8 +87,8 @@ switch($_GET["accion"])
 	<nav class="menu1">
 		<ul class="ul">
 			<li><a href=""><img class="logo" src="img/logo.png"></a></li>
-			<li><a href="http://localhost/intento/prueba.php" ><p>HOME</p></a></li>
-			<li><a href="http://localhost/intento/view/productos.php" ><p>ROPA</p></a></li>
+			<li><a href="http://localhost/Infernum.sb/prueba.php" ><p>HOME</p></a></li>
+			<li><a href="http://localhost/Infernum.sb/view/productos.php" ><p>ROPA</p></a></li>
 			<li><a href="" ><p>NOSOTROS</p></a></li>
 			<!--<li><a href=""><img class="logo2" src="img/buscar.png"></a></li>-->
 		</ul>
@@ -143,7 +143,7 @@ if(isset($_SESSION["items_carrito"]))
 <td colspan="2"><b>Total de productos:</b></td>
 <td><b><?php echo $totcantidad; ?></b></td>
 <td colspan="2"><strong><?php echo "$ ".number_format($totprecio, 2); ?></strong></td>
-<td><a href="http://localhost/intento/view/indexFinalizar.php?c=Finalizar&a=Crud1">Pagar</a></td>
+<td><a href="http://localhost/Infernum.sb/view/indexFinalizar.php?c=Finalizar&a=Crud1">Pagar</a></td>
 </tr>
 
 </table>		

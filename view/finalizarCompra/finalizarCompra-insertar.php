@@ -40,12 +40,12 @@ if(isset($_SESSION["items_carrito"]))
 <link rel="stylesheet" type="text/css" href="css/formulario.css">
 
 <h1 class="Titulo">
-    <?php echo $alm->IdPedido != null ? $alm->IdPedido : 'Nuevo Pedido'; ?>
+    <?php echo $alm->IdPedido != null ? $alm->IdPedido : 'Finalizar Compra'; ?>
 </h1>
 
 <div class="Contenedor">
 <ol class="Usuario">
-<li><a class="Volver" href="indexFinalizar.php">Pedidos Registrados</a></li>
+<li><a class="Volver" href="indexCarro.php">Volver</a></li>
 
 </ol>
 
@@ -82,15 +82,15 @@ if(isset($_SESSION["items_carrito"]))
     </div>
 
     <div class="nombre" >
-        <label >Estado pedido:</label>
-        <select name="EstadoPedido" class="input">
+        <label  >Estado pedido:</label>
+        <select  name="EstadoPedido" class="input">
 			<option <?php echo $alm->EstadoPedido == 'Inactivo' ? 'selected' : ''; ?> value="Inactivo" class="input">Inactivo</option>
             <option <?php echo $alm->EstadoPedido == 'Activo' ? 'selected' : ''; ?> value="Activo" class="input">Activo</option>   
         </select>
     </div> 
 
     <div class="nombre">
-        <input type="text" name="MetodoPago" value="<?php echo $alm->MetodoPago; ?>" class="input" placeholder="Ingrese Metodo Pago" required="required" minlength="10" maxlength="15"/>
+        <input type="text" name="MetodoPago" value="<?php echo $alm->MetodoPago; ?>" class="input" placeholder="Ingrese Metodo Pago" required="required" />
     </div>
 
 

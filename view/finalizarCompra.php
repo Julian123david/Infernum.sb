@@ -92,8 +92,8 @@ switch($_GET["accion"])
 	<nav class="menu1">
 		<ul class="ul">
 			<li><a href=""><img class="logo" src="img/logo.png"></a></li>
-			<li><a href="http://localhost/intento/prueba.php" ><p>HOME</p></a></li>
-			<li><a href="http://localhost/intento/view/productos.php" ><p>ROPA</p></a></li>
+			<li><a href="http://localhost/Infernum.sb/prueba.php" ><p>HOME</p></a></li>
+			<li><a href="http://localhost/Infernum.sb/view/productos.php" ><p>ROPA</p></a></li>
 			<li><a href="" ><p>NOSOTROS</p></a></li>
 			<!--<li><a href=""><img class="logo2" src="img/buscar.png"></a></li>-->
 		</ul>

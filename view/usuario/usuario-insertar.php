@@ -120,9 +120,9 @@ input, input:valid {
                 } else {
                     document.getElementById("Error2").innerText="";
                 }
-<<<<<<< HEAD
+
                             }
-=======
+
                 if(NombreUsuario.length < 6 ){
                     document.getElementById("Error3").innerText="Nombre demasiado corto";
                 } else {
@@ -139,8 +139,8 @@ input, input:valid {
                     document.getElementById("Error5").innerText="";
                 }   
                 
-            }
->>>>>>> 4350297f9ea70579e6b0aea20c8e41acd5170996
+
+
             </script>
 </form>
 </div>

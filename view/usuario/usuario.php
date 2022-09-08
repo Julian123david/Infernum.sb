@@ -1,10 +1,10 @@
 <link rel="stylesheet" type="text/css" href="../css/view.css">
-<<<<<<< HEAD
+
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-=======
+
 <script src="js/alertas.js"></script>
 
->>>>>>> 4350297f9ea70579e6b0aea20c8e41acd5170996
+
 </script>
 
 <script type="text/javascript" src="js/buscador.js"></script>
@@ -86,7 +86,4 @@ body {font-family: Arial, Helvetica, sans-serif;}
 </table> 
 
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 4350297f9ea70579e6b0aea20c8e41acd5170996
