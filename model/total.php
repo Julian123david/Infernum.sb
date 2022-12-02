@@ -8,7 +8,7 @@ class Total
 	public $PrecioUnitario;
     public $DescuentoPedido;
     public $IdPedido;
-	public $id;
+	public $cod;
 
 
 	
@@ -81,7 +81,7 @@ class Total
 						PrecioUnitario = ?,
                         DescuentoPedido  = ?,
 						IdPedido = ?, 
-						id = ?
+						cod = ?
 
 				    WHERE IdDetalle= ?";
 
@@ -91,7 +91,7 @@ class Total
 						$data->CantidadProducto,
                         $data->PrecioUnitario, 
                         $data->DescuentoPedido,
-						$data->id,
+						$data->cod,
                         $data->IdPedido,
 						$data->IdDetalle
 					)
@@ -106,7 +106,7 @@ class Total
 	{
 		try 
 		{
-		$sql = "INSERT INTO DetallePedido( CantidadProducto, PrecioUnitario, DescuentoPedido, IdPedido, id) 
+		$sql = "INSERT INTO DetallePedido( CantidadProducto, PrecioUnitario, DescuentoPedido, IdPedido, cod) 
 		        VALUES (?, ?, ?, ?,?)";
 
 		$this->pdo->prepare($sql)
@@ -117,7 +117,7 @@ class Total
 
 					$data->DescuentoPedido,
 					$data->IdPedido,
-					$data->id
+					$data->cod
 
                 )
 			);

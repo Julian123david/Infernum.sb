@@ -1,4 +1,28 @@
 <link rel="stylesheet" type="text/css" href="css/formulario.css">
+<link rel="stylesheet" href="../view/nav/navGerente.css">
+
+<header style="flex: inline;">
+        <nav class="navegacion">
+            
+            <ul class="menu0">
+                <li><a href=""><img class="logo" src="img/logo2.png"></a></li>
+                
+            </ul>
+            <ul class="menu3">
+                <li><a class="logout" href="loginout.php">Cerrar Sesion</a></li>
+            </ul>
+            <ul class="menu1">
+                <li><a href="gerente.php">Home</a></li>
+                <li><a href="ProductosCategoria.php">Acciones</a>
+                    <ul class="submenu">
+                        <li><a href="indexPedido.php">Pedidos</a></li>
+                        <li><a href="indexCategoria.php">Categorias</a></li>
+                        <li><a href="indexProducto.php">Productos</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
 <style>
 .label{
     float: left; 

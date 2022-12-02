@@ -2,7 +2,7 @@
 
 
 <h1 class="Titulo">
-    <?php echo $alm->id != null ? $alm->nom : 'Nuevo Registro'; ?>
+    <?php echo $alm->cod != null ? $alm->nom : 'Nuevo Registro'; ?>
 </h1>
 
 <div class="Contenedor">
@@ -12,10 +12,10 @@
 </ol>
 
 <form id="frm-producto" action="?c=Producto&a=Guardar" method="post" enctype="multipart/form-data">
-    <input type="hidden" name="id" value="<?php echo $alm->id; ?>" />
+    <input type="hidden" name="cod" value="<?php echo $alm->cod; ?>" />
 
     <div class="nombre">
-        <input type="text" name="id" value="<?php echo $alm->id; ?>" class="input" placeholder="Ingrese IdProducto" required="required" />
+        <input type="text" name="cod" value="<?php echo $alm->cod; ?>" class="input" placeholder="Ingrese IdProducto" required="required" />
     </div>
 
      <div class="nombre">
@@ -45,15 +45,15 @@
         <input type="text" name="pre" value="<?php echo $alm->pre; ?>" class="input" placeholder="Ingrese Precio" required="required" />
     </div>
 
-    <div class="nombre">
+    <div class="nombre" hidden>
     <label>EstadoProducto:</label>
         <select name="EstadoProducto" class="input">
-            <option <?php echo $alm->EstadoProducto == 'Disponible' ? 'selected' : ''; ?> value="Disponible">Disponible</option>
-            <option <?php echo $alm->EstadoProducto == 'Agotado' ? 'selected' : ''; ?> value="Agotado">Agotado</option>
+            <option <?php echo $alm->EstadoProducto == '1' ? 'selected' : ''; ?> value="1">Disponible</option>
+            <option <?php echo $alm->EstadoProducto == '0' ? 'selected' : ''; ?> value="0">Agotado</option>
         </select>
     </div>
 
-
+<br>
     <hr />
     <br>
     <center>

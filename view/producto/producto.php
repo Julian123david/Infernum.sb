@@ -1,5 +1,17 @@
+<?php
+  
+    // Connect to database 
+    $con = mysqli_connect("localhost","root","","proyecto");
+  
+    // Get all the courses from courses table
+    // execute the query 
+    // Store the result
+    $sql = "SELECT * FROM `Producto`";
+    $Sql_query = mysqli_query($con,$sql);
+    $All_courses = mysqli_fetch_all($Sql_query,MYSQLI_ASSOC);
+?>
+
 <link rel="stylesheet" type="text/css" href="../css/view.css">
-<<<<<<< HEAD
 <script type="text/javascript" src="js/buscador.js"></script>
 
  
@@ -32,7 +44,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
     border-radius: 1px;
 }
 </style>
-=======
+
 <style>
     .imagen{
 	width: 100%;
@@ -58,11 +70,31 @@ body {font-family: Arial, Helvetica, sans-serif;}
     .btnvolver:hover{
         background-color: #6A59FE;
     }
-
+    .btn{
+            background-color: red;
+            border: none;
+            color: white;
+            padding: 5px 5px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 20px;
+        }
+        .green{
+            background-color: #199319;
+        }
+        .red{
+            background-color: red;
+        }
 </style>
 <div class="btnvolver"><a href="javascript:history.back()"> Volver</a></div>
->>>>>>> 4350297f9ea70579e6b0aea20c8e41acd5170996
 <h1 class="Titulo">Producto</h1>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="js/paginacion.js"></script>
 
 <br>
 <div class="NewUserdiv">
@@ -75,44 +107,82 @@ body {font-family: Arial, Helvetica, sans-serif;}
 <table class="tabla" id="datos">
     <thead>
         <tr class="tr">
-            <th>Id</th>            
-            <th>IdCategoria</th>
+            <th>Codigo</th>            
+            <th>Categoria</th>
             <th>Imagen</th>
-            <th>Codigo</th>
             <th>NombreProducto</th>
             <th>PrecioProducto</th>
             <th>EstadoProducto</th>
+            <th>Cambiar Estado</th>
             <th style="width:60px;"></th>
             <th style="width:60px;"></th>
         </tr>
     </thead>
     <tbody>
-    <?php foreach($this->model->Listar() as $r): ?>
+    <?php
+              foreach ($All_courses as $course) { 
+              
+              ?>
         <tr class="tr2">
-            <td><?php echo $r->id; ?></td>          
-<<<<<<< HEAD
-            <td><?php echo $r->NombreCategoria; ?></td>
-=======
-            <td><?php echo $r->IdCategoria; ?></td>
->>>>>>> 4350297f9ea70579e6b0aea20c8e41acd5170996
-            <td><img class="imagen" src="<?php echo $r->img; ?>"></img></td>
-            <td><?php echo $r->cod; ?></td>
-            <td><?php echo $r->nom; ?></td>
-            <td><?php echo $r->pre; ?></td>
-            <td><?php echo $r->EstadoProducto; ?></td>
+            <td><?php echo $course['cod']; ?></td>
             <td>
-                <a href="?c=Producto&a=Crud&id=<?php echo $r->id; ?>"><img class="edit" src="img/edit.png"></a>
+            <?php
+                        if($course['IdCategoria']=="1") 
+                            echo "Camisetas";
+
+                        elseif ($course['IdCategoria']=="2") {
+                            echo "Camisas";
+                        }
+                        elseif ($course['IdCategoria']=="3") {
+                            echo "Jeans";
+                        }
+                        else
+                            echo "Gorros";
+                    ?>
+            </td>
+
+            <td><img class="imagen" src="<?php echo $course['img']; ?>"></img></td>
+            
+            <td><?php echo $course['nom']; ?></td>
+
+            <td><?php echo $course['pre']; ?></td>
+
+            <td><?php if($course['EstadoProducto']=="1") 
+                         echo "Activo";
+                            else 
+                        echo "Agotado";
+                ?>   
+            </td>
+
+            <td>
+            <?php 
+                    if($course['EstadoProducto']=="1") 
+  
+                        echo 
+"<a href=producto/desactive.php?cod=".$course['cod']." class='btn red'>Desactivarlo</a>";
+                    else 
+                        echo 
+"<a href=producto/activate.php?cod=".$course['cod']." class='btn green'>Activarlo</a>";
+                    ?>
             </td>
             <td>
-                <a onclick="javascript:return confirm('¿Seguro de eliminar este producto?');" href="?c=Producto&a=Eliminar&id=<?php echo $r->id; ?>">                <img class="delete" src="img/delete.png">
-</a>
+                <a href="?c=Producto&a=Crud&cod=<?php echo $course['cod']; ?>">
+                <img class="edit" src="img/edit.png"></a>
             </td>
+
         </tr>
         <tr class='noSearch hide'>
 
-<td colspan="5"></td>
+<td colspan="9"></td>
 
 </tr>
-    <?php endforeach; ?>
+<?php
+                }
+                // End the foreach loop 
+           ?>
     </tbody>
 </table> 
+<div class="paginacionDiv">
+    <ul class="paginacionUl" id="myPager"></ul>
+</div>
+

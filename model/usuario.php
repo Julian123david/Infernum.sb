@@ -107,6 +107,29 @@ class Usuario
 		try 
 		{
 		$sql = "INSERT INTO Usuario (NombreUsuario,ClaveUsuario, EstadoUsuario, IdRol) 
+		        VALUES (?, ?, ?,  ?)";
+
+		$this->pdo->prepare($sql)
+		     ->execute(
+				array(
+                    $data->NombreUsuario,
+                    $data->ClaveUsuario,
+					$data->EstadoUsuario,
+					$data->IdRol,
+
+                )
+			);
+		} catch (Exception $e) 
+		{
+			die($e->getMessage());
+		}
+	}
+	public function Registrar1(Usuario $data)
+	{
+		
+		try 
+		{
+		$sql = "INSERT INTO Usuario (NombreUsuario,ClaveUsuario, EstadoUsuario, IdRol) 
 		        VALUES (?, ?, ?, ?)";
 
 		$this->pdo->prepare($sql)
@@ -119,8 +142,6 @@ class Usuario
 
                 )
 			);
-			echo '<script language="javascript">alert("Usuario y/o contraseña incorrecto");"</script>';;
-
 		} catch (Exception $e) 
 		{
 			die($e->getMessage());

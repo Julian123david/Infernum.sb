@@ -1,5 +1,5 @@
 <link rel="stylesheet" type="text/css" href="../css/view.css">
-<<<<<<< HEAD
+
 <script type="text/javascript" src="js/buscador.js"></script>
 
  
@@ -23,12 +23,9 @@ body {font-family: Arial, Helvetica, sans-serif;}
 body {font-family: Arial, Helvetica, sans-serif;}
  
 
-=======
-<style type="text/css">
-    
->>>>>>> 4350297f9ea70579e6b0aea20c8e41acd5170996
-</style>
 
+<style type="text/css">
+</style>
 <h1 class="Titulo">Rol</h1>
 
 <br>

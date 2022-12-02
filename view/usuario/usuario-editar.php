@@ -1,4 +1,39 @@
+<?php
+session_start();
+if(!isset($_SESSION['rol'])){
+    header('location: login.php');
+}else{
+    if($_SESSION['rol'] != 1){
+        header('location: login.php');
+    }
+}
+
+?>
 <link rel="stylesheet" type="text/css" href="css/formulario.css">
+<link rel="stylesheet" href="../view/nav/navGerente.css">
+
+<header style="flex: inline;">
+        <nav class="navegacion">
+            
+            <ul class="menu0">
+                <li><a href=""><img class="logo" src="img/logo2.png"></a></li>
+                
+            </ul>
+            <ul class="menu3">
+                <li><a class="logout" href="loginout.php">Cerrar Sesion</a></li>
+            </ul>
+            <ul class="menu1">
+                <li><a href="gerente.php">Home</a></li>
+                <li><a href="ProductosCategoria.php">Acciones</a>
+                    <ul class="submenu">
+                        <li><a href="indexPedido.php">Pedidos</a></li>
+                        <li><a href="indexCategoria.php">Categorias</a></li>
+                        <li><a href="indexProducto.php">Productos</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
 <style>
 .label{
     float: left; 
@@ -59,7 +94,7 @@ input, input:valid {
     
     <div class="nombre">
         <label class="label">Nombre:</label>
-        <input type="text" name="NombreUsuario" value="<?php echo $alm->NombreUsuario; ?>" class="input" placeholder="Nombre Usuario" required  minlength="6" maxlength="35"/> 
+        <input type="text" name="NombreUsuario" value="<?php echo $alm->NombreUsuario; ?>" class="input" placeholder="Nombre Usuario" required  minlength="5" maxlength="35"/> 
         <br>
         <label id="Error1" class="error" style="color:red"></label>
         <br>
@@ -74,13 +109,7 @@ input, input:valid {
         <label id="Error5" class="error5" style="color:red"></label><br>
     </div>
 
-    <div class="nombre">
-        <label>Estado:</label>
-        <select name="EstadoUsuario" class="input">
-            <option <?php echo $alm->EstadoUsuario == 'Activo' ? 'selected' : ''; ?> value="Activo" class="input">Activo</option>
-            <option <?php echo $alm->EstadoUsuario== 'Inactivo' ? 'selected' : ''; ?> value="Inactivo" class="input">Inactivo</option>
-        </select>
-    </div> 
+
 
     <div class="nombre">
         <label>IdRol:</label>
@@ -127,7 +156,7 @@ input, input:valid {
                 } else {
                     document.getElementById("Error2").innerText="";
                 }
-                if(NombreUsuario.length < 6 ){
+                if(NombreUsuario.length < 5 ){
                     document.getElementById("Error3").innerText="Nombre demasiado corto";
                 } else {
                     document.getElementById("Error3").innerText="";

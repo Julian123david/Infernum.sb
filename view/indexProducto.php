@@ -1,29 +1,46 @@
+<?php
+session_start();
+if(!isset($_SESSION['rol'])){
+    header('location: login.php');
+}else{
+    if($_SESSION['rol'] != 1){
+        header('location: login.php');
+    }
+}
+
+?>
 <html>
 <head>
     <title>Infernum.sb</title>
     <link rel="shortcut icon" href="..\img\celular.jpg">
-    <link rel="stylesheet" type="text/css" href="css/view.css">
+    <link rel="stylesheet" type="text/css" href="css/views.css">
 
-    <link rel="stylesheet" href="../view/nav/nav.css">
+    <link rel="stylesheet" href="../view/nav/navgerente.css">
   </head>  
     
     <body>
-    <header>
-	<nav class="menu1">
-		<ul class="ul">
-			<li><a href=""><img class="logo" src="img/logo.png"></a></li>
-			<li><a href="gerente.php" ><p>HOME</p></a></li>
-			<li><a href="" ><p>ROPA</p></a></li>
-			<li><a href="" ><p>NOSOTROS</p></a></li>
-			<!--<li><a href=""><img class="logo2" src="img/buscar.png"></a></li>-->
-		</ul>
-		<ul class="der">
-			<li><a href=""><img class="logo2" src="img/buscar.png"></a></li>
-			<li><a href=""><img class="logo3" src="img/persona.png"></a></li>
-			<li><a href=""><img class="logo3" src="img/carrito.png"></a></li>
-		</ul>
-	</nav>
-</header>
+    <header style="flex: inline;">
+        <nav class="navegacion">
+            
+            <ul class="menu0">
+                <li><a href=""><img class="logo" src="img/logo2.png"></a></li>
+                
+            </ul>
+            <ul class="menu3">
+                <li><a class="logout" href="loginout.php">Cerrar Sesion</a></li>
+            </ul>
+            <ul class="menu1">
+                <li><a href="gerente.php">Home</a></li>
+                <li><a href="ProductosCategoria.php">Acciones</a>
+                    <ul class="submenu">
+                        <li><a href="indexPedido.php">Pedidos</a></li>
+                        <li><a href="indexCategoria.php">Categorias</a></li>
+                        <li><a href="indexProducto.php">Productos</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
 <?php
 require_once '../model/databases.php';

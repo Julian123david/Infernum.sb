@@ -79,7 +79,7 @@ switch($_GET["accion"])
 <meta charset="UTF-8">
 <head>
 <title>Infernum.sb</title>
-<link href="../view/css/carros.css" rel="stylesheet" />
+<link rel="stylesheet" href="../view/css/productos.css">
 <link rel="stylesheet" href="../view/nav/nav.css">
 </head>
 <body>
@@ -102,28 +102,32 @@ switch($_GET["accion"])
 </header>
 <div>
 <div><h2>Productos</h2></div>
+
 <div class="contenedor_general">
 	<?php
 	/*VaidrollTeam*/
-	$productos_array = $usar_db->vaiquery("SELECT * FROM Producto WHERE EstadoProducto = 'Disponible' ORDER BY id ASC
+	$productos_array = $usar_db->vaiquery("SELECT * FROM Producto WHERE EstadoProducto = 'Disponible' ORDER BY cod ASC
 	");
 	if (!empty($productos_array)) 
 	{ 
 		foreach($productos_array as $i=>$k)
 		{
 	?>
+
 		<div class="contenedor_productos">
 			<form method="POST" action="indexCarro.php?accion=agregar&cod=
-			<?php echo $productos_array[$i]["cod"]; ?>">
-			<div><img src="<?php echo $productos_array[$i]["img"]; ?>"></div>
-			<div>
-			<div style="padding-top:20px;font-size:18px;"><?php echo $productos_array[$i]["nom"]; ?></div>
-			<div style="padding-top:10px;font-size:20px;"><?php echo "$".$productos_array[$i]["pre"]; ?></div>
-            <div><input type="text" name="txtcantidad" value="1" size="2" maxlength="1" /><input type="submit" value="Agregar" />
-			</div>
-			</div>
+				<?php echo $productos_array[$i]["cod"]; ?>">
+					<div><img src="<?php echo $productos_array[$i]["img"]; ?>" alt="Smiley face"></div>
+				<div>
+					<div style="padding-top:20px;font-size:18px;"><?php echo $productos_array[$i]["nom"]; ?></div>
+					<div style="padding-top:10px;font-size:20px;"><?php echo "$".$productos_array[$i]["pre"]; ?></div>
+            			<div><input type="text" name="txtcantidad" value="1" size="2" maxlength="1" />
+							<input type="submit" value="Agregar" />
+								</div>
+		    	</div>
 			</form>
 		</div>
+ 
 	<?php
 		}
 	}

@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="../css/view.css">
 <h1 class="page-header">Compañian de envio</h1>
 
 <br>
@@ -19,7 +20,7 @@
     <?php foreach($this->model->Listar() as $r): ?>
         <tr>
             <td><?php echo $r->IdCompaniaEnvio; ?></td>
-            <td><?php echo $r->$NombreCompamia; ?></td>
+            <td><?php echo $r->$NombreCompania; ?></td>
             <td><?php echo $r->$TelefonoCompania; ?></td>
             <td>
                 <a href="?c=Compania&a=Crud&IdCompaniaEnvio=<?php echo $r->IdCompaniaEnvio; ?>">Editar</a>

@@ -8,7 +8,7 @@ class Detalles
 	public $PrecioUnitario;
     public $DescuentoPedido;
     public $IdPedido;
-	public $id;
+	public $cod;
 
 	public function __CONSTRUCT()
 	{
@@ -79,7 +79,7 @@ class Detalles
 						PrecioUnitario = ?,
                         DescuentoPedido  = ?,
 						IdPedido = ?,
-						id =?
+						cod =?
 
 				    WHERE IdDetalle = ?";
 
@@ -90,7 +90,7 @@ class Detalles
 						$data->CantidadProducto,
                         $data->PrecioUnitario, 
                         $data->DescuentoPedido,
-						$data->id,
+						$data->cod,
                         $data->IdPedido,
 						$data->IdDetalle	
 					)
@@ -105,7 +105,7 @@ class Detalles
 	{
 		try 
 		{
-		$sql = "INSERT INTO DetallePedido (CantidadProducto, PrecioUnitario, DescuentoPedido ,IdPedido , id) 
+		$sql = "INSERT INTO DetallePedido (CantidadProducto, PrecioUnitario, DescuentoPedido ,IdPedido , cod) 
 		        VALUES (?, ?, ?, ?,?)";
 
 		$this->pdo->prepare($sql)
@@ -115,7 +115,7 @@ class Detalles
                     $data->PrecioUnitario, 
                     $data->DescuentoPedido,
                     $data->IdPedido,
-                    $data->id,
+                    $data->cod,
 
                 )
 			);

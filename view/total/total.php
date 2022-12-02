@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="css/view.css">
+<link rel="stylesheet" type="text/css" href="../css/view.css">
 <h1 class="page-header">Detalle</h1>
 
 <br>

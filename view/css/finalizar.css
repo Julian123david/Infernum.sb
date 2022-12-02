@@ -1,0 +1,82 @@
+.nota{
+    width: 120%;
+    height: 30px;
+    background-color: #7780CC;
+    color: white;
+}
+
+.lado{
+    margin: 15px 15px 15px 55px ;
+    float: left;
+    font-size: 20px;
+}
+
+.Titulo{
+	font-family: inherit;
+	text-align: center;
+	margin: 30px 10%;
+	font-size: 250%;
+	color: #141E48;
+}
+
+.Volver{
+	text-decoration: none;
+	border: none;
+	background-color: #5E6EB2;
+	color: white;
+	font-size: 130%;
+	padding: 7px;
+	width: 270px;
+	border-radius: 15px;
+	margin-top: 20%;
+}   
+
+input[type=text] {
+    position: relative;
+    padding:7px; 
+    border:2px inset black;
+    -webkit-border-radius: 5px;
+    border-radius: 1px;
+    margin-left: 1px;
+    height: 40px;
+   width: 120%; 
+   margin-bottom: 15px;
+}
+
+
+.button{
+    text-decoration: none;
+	border: none;
+	background-color: #5E6EB2;
+	color: white;
+	font-size: 130%;
+	padding: 7px;
+	width: 270px;
+	border-radius: 15px;
+	 
+}
+
+hr
+{
+	width:120%;
+}
+
+.otro{
+    width: 45%;
+    height: 360px;
+    float: right;
+    margin: 15px 15px 15px 15px ;
+    font-size: 20px;
+    border:1px inset black;
+}
+
+.otro p{
+    margin-left: 30px;
+}
+
+.otro hr{
+    width:90%;
+    margin-left: 30px;
+    border:1px inset rgb(159, 157, 157);
+
+}

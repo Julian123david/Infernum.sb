@@ -66,7 +66,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
         </tr>
         <tr class='noSearch hide'>
 
-<td colspan="5"></td>
+<td colspan="10"></td>
 
 </tr>
     <?php endforeach; ?>

@@ -18,8 +18,8 @@ class ProductoController{
     public function Crud(){
         $alm = new Producto();
         
-        if(isset($_REQUEST['id'])){
-            $alm = $this->model->Obtener($_REQUEST['id']);
+        if(isset($_REQUEST['cod'])){
+            $alm = $this->model->Obtener($_REQUEST['cod']);
         }
         
 
@@ -30,8 +30,8 @@ class ProductoController{
     public function Crud1(){
         $alm = new Producto();
         
-        if(isset($_REQUEST['id'])){
-            $alm = $this->model->Obtener($_REQUEST['id']);
+        if(isset($_REQUEST['cod'])){
+            $alm = $this->model->Obtener($_REQUEST['cod']);
         }
         
 
@@ -41,16 +41,15 @@ class ProductoController{
     
     public function Guardar(){
         $alm = new Producto();
-        
-        $alm->id = $_REQUEST['id'];  
+
+        $alm->cod= $_REQUEST['cod'];
         $alm->IdCategoria= $_REQUEST['IdCategoria'];
         $alm->img = $_REQUEST['img'];
-        $alm->cod= $_REQUEST['cod'];
         $alm->nom= $_REQUEST['nom'];
         $alm->pre= $_REQUEST['pre'];
         $alm->EstadoProducto= $_REQUEST['EstadoProducto'];
 
-        $alm->id > 0 
+        $alm->cod > 0 
             ? $this->model->Actualizar($alm)
             : $this->model->Registrar($alm);
         
@@ -58,7 +57,7 @@ class ProductoController{
     }
     
     public function Eliminar(){
-        $this->model->Eliminar($_REQUEST['id']);
+        $this->model->Eliminar($_REQUEST['cod']);
         header('Location: indexProducto.php');
     }
 }

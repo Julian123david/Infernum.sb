@@ -1,0 +1,33 @@
+.envio{
+	text-align: left;
+	width: 100%;
+	display: grid;
+	place-items: center;
+	text-align: center;
+}
+
+.otro{
+	text-decoration: none;
+	border: none;
+	background-color: #5E6EB2;
+	color: white;
+	font-size: 130%;
+	padding: 7px;
+	width: 270px;
+	border-radius: 15px;
+	font-weight: bold;
+	
+}
+
+
+.otri{
+    text-decoration: none;
+	border: none;
+	background-color: #5E6EB2;
+	color: white;
+	font-size: 130%;
+	padding: 7px;
+	width: 270px;
+	border-radius: 15px;
+	font-weight: bold;
+}

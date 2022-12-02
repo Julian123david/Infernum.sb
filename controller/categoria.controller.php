@@ -35,7 +35,7 @@ class CategoriaController{
         }
         
 
-        require_once '../view/categoria/categoria-insertar.php';
+        require_once '../view/categoria/categorio-insertar.php';
 
     }
     

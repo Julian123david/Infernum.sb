@@ -29,6 +29,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
     <input class="buscar" type="text" placeholder="Buscar Detalle" id="searchTerm" onkeyup="doSearch()" >
 </div>
 <br>
+
 <table class="tabla" id="datos">
     <thead>
         <tr class="tr">
@@ -37,7 +38,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
             <th>Precio Unitario</th>
             <th>Descuento Pedido</th>
             <th>IdPedido</th>
-            <th>id</th>
+            <th>Producto</th>
 
             <th style="width:60px;"></th>
             <th style="width:60px;"></th>
@@ -51,7 +52,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
             <td><?php echo $r->PrecioUnitario; ?></td>
             <td><?php echo $r->DescuentoPedido; ?></td>
             <td><?php echo $r->IdPedido; ?></td>
-            <td><?php echo $r->id; ?></td>
+            <td><?php echo $r->cod; ?></td>
             <td>
                 <a href="?c=Detalles&a=Crud&IdDetalle=<?php echo $r->IdDetalle; ?>"><img class="edit" src="img/edit.png"></a>
             </td>

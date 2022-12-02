@@ -34,18 +34,24 @@ include_once '../model/database.php';
         $user = $_POST['user'];
         $pass = $_POST['pass'];
 
+        session_start();
+		$_SESSION['nombredelusuario']=$user;
+
+
         $db = new Database();
-        $query = $db->connect()->prepare('SELECT * FROM Usuario WHERE NombreUsuario = :user AND ClaveUsuario = :pass');
+        $query = $db->connect()->prepare('SELECT * FROM Usuario WHERE NombreUsuario = :user AND ClaveUsuario = :pass AND EstadoUsuario =1;');
         $query->execute(['user' => $user, 'pass' => $pass]);
     
         $row = $query->fetch(PDO::FETCH_NUM);
-        
-        if($row == true){
-             // validar rol
+
+
+        if($row == true){                
+
              $rol = $row[4];
              $_SESSION['rol'] = $rol;
  
-             switch($_SESSION['rol']){
+ 
+        switch($_SESSION['rol']){
                  case 1:
                      header('location: gerente.php');
                  break;
@@ -64,43 +70,116 @@ include_once '../model/database.php';
         }else{
             echo '<script language="javascript">alert("Usuario y/o contraseña incorrecto");window.location.href="login.php"</script>';;
 
-        }
+        }        
+
+
 
     }
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Iniciar Sesión</title>
-    <link rel="stylesheet" href="../view/nav/nav.css">
+    <link rel="stylesheet" href="../view/nav/navGerente.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type="text/css">
+.icon2 {
+    bottom: 2px;
+    right: 5px;
+    width: 40px;
+    height: 40px !important;
+    cursor: pointer;
+    filter: opacity(75%);
+}
+.icon2:hover{
+    filter: opacity(100%);
+}
 
-    <link rel="stylesheet" href="Diseño/css/login.css">
+.icon2:focus{
+    filter: opacity(100%);
+}
+.divIcon{
+    display: grid;
+    height: fit-content;
+    margin-top: 10px;
+    margin-left: 300px;
+
+}
+
+</style>
+<script type="text/javascript">
+        function mostrarContrasena(){
+                var tipo = document.getElementById("password");
+                if(tipo.type == "password"){
+                    tipo.type = "text";
+                }else{
+                    tipo.type = "password";
+                }
+            }
+    </script>
 </head>
 <body>
 
-<header>
-	<nav class="menu1">
-		<ul class="ul">
-			<li><a href=""><img class="logo" src="img/logo.png"></a></li>
-			<li><a href="http://localhost/Infernum.sb/prueba.php" ><p>HOME</p></a></li>
-			<li><a href="" ><p>ROPA</p></a></li>
-			<li><a href="" ><p>NOSOTROS</p></a></li>
-			<!--<li><a href=""><img class="logo2" src="img/buscar.png"></a></li>-->
-		</ul>
-		<ul class="der">
-			<li><a href=""><img class="logo2" src="img/buscar.png"></a></li>
-			<li><a href=""><img class="logo3" src="img/persona.png"></a></li>
-			<li><a href=""><img class="logo3" src="img/carrito.png"></a></li>
-		</ul>
-	</nav>
-</header>
-
+<header style="flex: inline;">
+        <nav class="navegacion">
+            
+            <ul class="menu0">
+                <li><a href="../prueba.php"><img class="logo" src="img/logo2.png"></a></li>
+                
+            </ul>
+        </nav>
+    </header>
 <br><br><br><br>
       
 <center>
+<form action="#" autocomplete="off" method="POST" onsubmit="return validar();" ></form>    
+<img class="wave" src="img/wave.png">
     <div class="login">
+    <div class="container">
+		<div class="img">
+			<img src="img/Avatar01.svg">
+		</div>
+
+        <div class="login-content">
+			<form action="#" method="POST" onsubmit="return validar();">
+				<img src="img/avatar.svg">
+				<h2 class="title">Inicia Sesión</h2>
+           		<div class="input-div one">
+           		   <div class="i">
+           		   		<i class="fas fa-user"></i>
+           		   </div>
+
+           		   <div class="div">					
+           		   		<h5>Usuario</h5>
+           		   		<input type="text" class="input" name="user">
+           		   </div>
+           		</div>
+           		<div class="input-div pass">
+           		   <div class="i"> 
+           		    	<i class="fas fa-lock"></i>
+           		   </div>
+           		   <div class="div">
+           		    	<h5>Contraseña</h5>
+           		    	<input id="password" type="password" class="input" name="pass">
+                        <span id="imgContrasena" class="divIcon" data-activo=false><img src="https://cdn3.iconfinder.com/data/icons/show-and-hide-password/100/show_hide_password-09-256.png" onclick="mostrarContrasena()" class="icon2"></span><br>
+
+            	   </div>
+            	</div>   
+				        	
+            		<input type="submit" class="btn" name="Ingresar" value="Ingresa">
+				
+            </form>
+            <a href="http://localhost/Infernum.sb/view/IndexUsuario.php?c=Usuario&a=Crud2">Registrate</a>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/main.js"></script>
+
+       <!-- 
         <p>Inicio de Sesión</p>
         <br>
         <form action="#" method="POST" onsubmit="return validar();">
@@ -112,6 +191,6 @@ include_once '../model/database.php';
             </div>
         </form>
         </center>
-    </div>
+    </div>--->
 </body>
 </html>

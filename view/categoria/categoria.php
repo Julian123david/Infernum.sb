@@ -1,8 +1,6 @@
 <link rel="stylesheet" type="text/css" href="../css/view.css">
 <script type="text/javascript" src="js/buscador.js"></script>
 
-<<<<<<< HEAD
- 
 <style>
  datos {border:1px solid #ccc;padding:10px;font-size:1em;}
  
@@ -24,8 +22,8 @@ body {font-family: Arial, Helvetica, sans-serif;}
  
 
 </style>
+<div class="btnvolver"><a href="javascript:history.back()"> Volver</a></div>
 <h1 class="page-header">Categoria</h1>
-=======
 
 <style type="text/css">
     .btnvolver{
@@ -46,14 +44,13 @@ body {font-family: Arial, Helvetica, sans-serif;}
         background-color: #6A59FE;
     }
 </style>
-<div class="btnvolver"><a href="javascript:history.back()"> Volver</a></div>
+
 <h1 class="h1">Categoria</h1>
->>>>>>> 4350297f9ea70579e6b0aea20c8e41acd5170996
 
 <br>
 <div class="NewUserdiv">
 <a  href="?c=Categoria&a=Crud1">
-    <input class="NewUser" type="button" value="Nuevo Usuario"> </a> 
+    <input class="NewUser" type="button" value="Nueva Categoria"> </a> 
     <input class="buscar" type="text" placeholder="Buscar Categoria" id="searchTerm" onkeyup="doSearch()">
 </div>
 <br>
@@ -89,4 +86,4 @@ body {font-family: Arial, Helvetica, sans-serif;}
             </tr>
     <?php endforeach; ?>
     </tbody>
-</table> 
+</table>  

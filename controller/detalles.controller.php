@@ -46,7 +46,7 @@ class DetallesController{
         $alm->PrecioUnitario = $_REQUEST['PrecioUnitario'];
         $alm->DescuentoPedido = $_REQUEST['DescuentoPedido'];
         $alm->IdPedido= $_REQUEST['IdPedido'];
-        $alm->id= $_REQUEST['id'];
+        $alm->cod= $_REQUEST['cod'];
 
         $alm->IdDetalle > 0 
             ? $this->model->Actualizar($alm)

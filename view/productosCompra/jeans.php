@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 
 require_once("../../model/clase.php");
 
@@ -79,33 +79,38 @@ switch($_GET["accion"])
 <meta charset="UTF-8">
 <head>
 <title>Infernum.sb</title>
-<link href="../../view/css/carros.css" rel="stylesheet" />
-<link rel="stylesheet" href="../../view/nav/nav.css">
+<link href="../../view/css/productos.css" rel="stylesheet" />
+<link rel="stylesheet" href="../../view/nav/navgerente.css">
 </head>
 <body>
     
-<header>
-	<nav class="menu1">
-		<ul class="ul">
-			<li><a href=""><img class="logo" src="../img/logo.png"></a></li>
-			<li><a href="gerente.php" ><p>HOME</p></a></li>
-			<li><a href="" ><p>ROPA</p></a></li>
-			<li><a href="" ><p>NOSOTROS</p></a></li>
-			<!--<li><a href=""><img class="logo2" src="img/buscar.png"></a></li>-->
-		</ul>
-		<ul class="der">
-			<li><a href=""><img class="logo2" src="../img/buscar.png"></a></li>
-			<li><a href=""><img class="logo3" src="../img/persona.png"></a></li>
-			<li><a href=""><img class="logo3" src="../img/carrito.png"></a></li>
-		</ul>
-	</nav>
-</header>
+<header >
+        <nav class="navegacion">
+            <ul class="menu0">
+                <li><a href=""><img class="logo" src="../img/logo2.png"></a></li>
+                
+            </ul>
+            <ul class="menu3">
+            <li><a href="http://localhost/Infernum.sb/view/indexCarro.php"><img class="logo3" src="../img/carrito2.png"></a></li>
+            </ul>
+            <ul class="menu1">
+                <li><a href="../cliente.php">Home</a></li>
+                <li><a href="../ProductosCategoria.php">Ropa</a>
+                    <ul class="submenu">
+                        <li><a href="camisetas.php">Camisetas</a></li>
+                        <li><a href="camisas.php">Camisas</a></li>
+                        <li><a href="jeans.php">Jeans</a></li>
+                        <li><a href="gorros.php">Gorros</a></li>
+                    </ul>
+                </li>
+            </ul>
+    </header>
 <div>
 <div><h2>Productos</h2></div>
 <div class="contenedor_general">
 	<?php
 	/*VaidrollTeam*/
-	$productos_array = $usar_db->vaiquery("SELECT p.id , C.idCategoria, p.img, p.cod, p.nom, p.pre, p.EstadoProducto FROM Producto p  inner join Categoria c  on p.idCategoria = c.idCategoria WHERE EstadoProducto = 'Disponible' and c.IdCategoria= 3 ORDER BY id ASC;
+	$productos_array = $usar_db->vaiquery("SELECT  C.idCategoria, p.img, p.cod, p.nom, p.pre, p.EstadoProducto FROM Producto p  inner join Categoria c  on p.idCategoria = c.idCategoria WHERE EstadoProducto = '1' and c.IdCategoria= 3 ORDER BY cod ASC;
 	");
 	if (!empty($productos_array)) 
 	{ 

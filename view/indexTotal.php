@@ -1,28 +1,24 @@
+
 <html>
 <head>
     <title>Infernum.sb</title>
     <link rel="shortcut icon" href="..\img\celular.jpg">
-    <link rel="stylesheet" href="../view/nav/nav.css">
+    <link rel="stylesheet" href="../view/nav/navGerente.css">
   </head>  
-    
+  <header style="flex: inline;">
+        <nav class="navegacion">
+            
+            <ul class="menu0">
+                <li><a href=""><img class="logo" src="img/logo2.png"></a></li>
+                
+            </ul>
+
+
+        </nav>
+    </header>
     <body>
       
-    <header>
-	<nav class="menu1">
-		<ul class="ul">
-			<li><a href=""><img class="logo" src="img/logo.png"></a></li>
-			<li><a href="http://localhost/intento/view/gerente.php" ><p>HOME</p></a></li>
-			<li><a href="" ><p>ROPA</p></a></li>
-			<li><a href="" ><p>NOSOTROS</p></a></li>
-			<!--<li><a href=""><img class="logo2" src="img/buscar.png"></a></li>-->
-		</ul>
-		<ul class="der">
-			<li><a href=""><img class="logo2" src="img/buscar.png"></a></li>
-			<li><a href=""><img class="logo3" src="img/persona.png"></a></li>
-			<li><a href=""><img class="logo3" src="img/carrito.png"></a></li>
-		</ul>
-	</nav>
-</header>
+    
 
 
 

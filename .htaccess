@@ -1,0 +1,2 @@
+ErrorDocument 404 http://localhost/Infernum.sb/view/404.php
+DirectoryIndex prueba.php

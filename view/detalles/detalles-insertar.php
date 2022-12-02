@@ -30,7 +30,7 @@
     </div>
     
     <div class="nombre">
-        <input type="number" name="id" value="" class="input" placeholder="Ingrese el IdProducto " required="required" />
+        <input type="number" name="cod" value="" class="input" placeholder="Ingrese el IdProducto " required="required" />
     </div>
 
 

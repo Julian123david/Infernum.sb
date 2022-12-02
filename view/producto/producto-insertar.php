@@ -2,7 +2,7 @@
 
 
 <h1 class="Titulo">
-    <?php echo $alm->id != null ? $alm->nom : 'Nuevo Registro'; ?>
+    <?php echo $alm->cod != null ? $alm->nom : 'Nuevo Registro'; ?>
 </h1>
 
 <div class="Contenedor">
@@ -11,15 +11,14 @@
 <li><a class="Volver" href="IndexProducto.php">Productos Registrados</a></li>
 </ol>
 
-<form id="frm-producto" action="?c=Producto&a=Guardar" method="post" enctype="multipart/form-data">
-    <input type="hidden" name="id" value="<?php echo $alm->id; ?>" />
-
-    <div class="nombre">
-        <input type="text" name="id" value="<?php echo $alm->id; ?>" class="input" placeholder="Ingrese IdProducto" required="required" />
+<form id="frm-producto" action="insertar.php" method="post" enctype="multipart/form-data" autocomplete="off">
+    
+<div class="nombre">
+        <input type="text" name="cod" value="<?php echo $alm->cod; ?>" class="input" placeholder="Ingrese Codigo" required="required" />
     </div>
 
      <div class="nombre">
-        <label>IdCategoria:</label>
+        <label>Categoria:</label>
         <select name="IdCategoria" class="input">
             <option <?php echo $alm->IdCategoria == 1 ? 'selected' : ''; ?> value="1">Camiseta</option>
             <option <?php echo $alm->IdCategoria == 2 ? 'selected' : ''; ?> value="2">Camisas</option>
@@ -30,12 +29,11 @@
     </div>   
     
     <div class="nombre">
-        <input type="text" name="img" value="<?php echo $alm->img; ?>" class="input" placeholder="Ingrese Imagen" required="required" />
+
+    <input  type="file" name="img"  class="input" value="<?php echo $alm->img; ?>"/>
     </div>
 
-    <div class="nombre">
-        <input type="text" name="cod" value="<?php echo $alm->cod; ?>" class="input" placeholder="Ingrese Codigo" required="required" />
-    </div>
+
     
     <div class="nombre">
         <input type="text" name="nom" value="<?php echo $alm->nom; ?>" class="input" placeholder="Ingrese Nombre" required="required" />
@@ -48,11 +46,11 @@
     <div class="nombre">
     <label>EstadoProducto:</label>
         <select name="EstadoProducto" class="input">
-            <option <?php echo $alm->EstadoProducto == 'Disponible' ? 'selected' : ''; ?> value="Disponible">Disponible</option>
-            <option <?php echo $alm->EstadoProducto == 'Agotado' ? 'selected' : ''; ?> value="Agotado">Agotado</option>
+            <option <?php echo $alm->EstadoProducto == '1' ? 'selected' : ''; ?> value="1">Disponible</option>
+            <option <?php echo $alm->EstadoProducto == '0' ? 'selected' : ''; ?> value="0">Agotado</option>
         </select>
     </div>
-
+<br>
 
     <hr />
     <br>

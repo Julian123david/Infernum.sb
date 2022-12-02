@@ -59,6 +59,22 @@ class Cliente
 		}
 	}
 
+	public function ObtenerE($IdCliente)
+	{
+		try 
+		{
+			$stm = $this->pdo
+			          ->prepare("SELECT  c.NombreCliente, c.IdUsuario, c.ApellidoCliente, c.DireccionCliente, c.TelefonoCliente, c.NumDocCliente, c.CorreoCliente from cliente c inner join usuario u on c.IdUsuario = u.IdUsuario where u.NombreUsuario = 'cliente';");
+			          
+
+			$stm->execute(array($IdCliente));
+			return $stm->fetch(PDO::FETCH_OBJ);
+		} catch (Exception $e) 
+		{
+			die($e->getMessage());
+		}
+	}
+
 	public function Eliminar($IdCliente)
 	{
 		try 
@@ -108,6 +124,9 @@ class Cliente
 		}
 	}
 
+	public function Registrar4()
+	{}
+
 	public function Registrar(Cliente $data)
 	{
 		try 
@@ -126,7 +145,32 @@ class Cliente
 					$data->NumDocCliente,
 					$data->CorreoCliente, 
 
-					$data->IdCliente
+                )
+			);
+		} catch (Exception $e) 
+		{
+			die($e->getMessage());
+		}
+	}
+
+	
+	public function Registrar1(Cliente $data)
+	{
+		try 
+		{
+		$sql = "INSERT INTO Cliente (IdUsuario, NombreCliente,ApellidoCliente, DireccionCliente, TelefonoCliente, NumDocCliente, CorreoCliente) 
+		        VALUES (?, ?, ?, ?,?,?,?)";
+
+		$this->pdo->prepare($sql)
+		     ->execute(
+				array(					
+					$data->IdUsuario,
+					$data->NombreCliente, 	
+					$data->ApellidoCliente,
+					$data->DireccionCliente,
+					$data->TelefonoCliente,
+					$data->NumDocCliente,
+					$data->CorreoCliente, 
 
                 )
 			);

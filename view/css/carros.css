@@ -1,11 +1,9 @@
-/*Titulo de la pagina h1*/
-.Titulo{
-	font-family: inherit;
-	margin-left: 10%;
-	font-size: 250%;
+body{
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-/*Boton new user y busqueda*/
+
+
 .NewUser{
 	text-decoration: none;
 	border: none;
@@ -38,7 +36,7 @@
 	background-color: #C0C2CB;
 }
 
-/*Tabla*/
+
 .tabla{
 	border-color: black 1px solid;
 	border: black 3px solid;
@@ -46,7 +44,7 @@
 	margin: auto auto;
 	width: 60%;
 	text-align: center;
-	font-family: sans-serif;
+
 	font-size: 130%;
 }
 
@@ -64,14 +62,14 @@
 th p{
 	color: white;
 }
-/*icono editar*/
+
 .edit{
 	width: 30px;
 	height: 30px;
 	margin-top: 5px;
 	margin-bottom: 5px;
 }
-/*icono eliminar*/
+
 .delete{
 	width: 30px;
 	height: 30px;
@@ -94,8 +92,8 @@ a input[type="submit"],button
 
 input[type="text"]
 {
-	width: 50px;
-    height: 50px;
+	width: 30px;
+    height: 30px;
 	font-size:18px;
 	margin-right:10px;
 	margin-top:5px;
@@ -103,8 +101,8 @@ input[type="text"]
 
 img
 {
-	width:150px;
-	height:150px;
+	width:100px;
+	height:100px;
 	
 }
 
@@ -125,20 +123,153 @@ hr
 	margin-bottom:4%;
 	
 }
-
-.contenedor_general
-{
-	width:80%;
-	text-align:center;
-	margin:0 auto;
+.imagen {
+	width: 155px;
+	height: 185px;
+	float: left;
+	padding: 10px;
+	 margin: 10px;
 }
 
-.imagen_peque {
-	width: 50px;
-    height: 50px;
-    border-radius: 30%;
-    border: #E0E0E0 1px solid;
-    padding: 5px;
-    vertical-align: middle;
-    margin-right: 14px;
+.nombreProducto{
+margin: -0px;
+margin-bottom: -10px;
+
+font-style: normal;
+font-size: 30px;
+color: #000000;
+display: inline-block;
+}
+
+.codigoProducto{
+margin:10px;
+font-size: 20px;
+margin-top: 10px;
+font-style: normal;
+color: #000000;
+display: inline-block;
+}
+
+.precioProducto{
+margin: 10px;;
+font-size: 20px;
+margin-top: -10px;
+font-style: normal;
+color: #000000;
+display: inline-block;
+
+
+}
+
+.totalProducto{
+	display: inline-block;
+	margin-bottom: -10px;
+
+	font-size: 20px;
+
+	font-style: normal;
+	color: #000000;
+}
+
+.totalPedio{
+	font-size: 25px;
+	font-style: normal;
+	color: #000000;
+	text-align:right;
+}
+
+.totalPedido{
+	margin: 0%;
+	font-size: 25px;
+
+	font-style: normal;
+	color: #000000;
+	text-align:right;	
+}
+
+#cantidad{
+	display: inline-block;
+	color: #000000;
+	text-align:right;
+	margin-bottom: -10px;	
+}
+
+.finalizar{
+	float:right;
+}
+
+button{
+	padding: 3px;
+	color: #7780CC;
+	background: transparent;
+	border: 2px solid #7780CC;
+	border-radius: 6px;
+	color:white;
+	text-decoration:none;
+	height: 50px;
+	width: 470px;
+}
+button:hover {
+	background-color: #7780CC;
+	color: white;
+}
+button:hover a {
+	background-color: #7780CC;
+	color: white;
+}
+
+ 
+button a{
+	color:#7780CC;
+	font-size: 20px;
+	text-decoration:none;	
+
+}
+
+#contendedor {
+	float: left;
+	width: 700px;
+  }
+
+  #lado{
+	float: right;
+	width: 500px;
+	margin-right: 37px;
+	position: fixed ;
+	top:240;
+	right: 0;
+  }
+
+  @media only screen and (max-width: 1100px) {
+	#lado {
+	  width: 200px;
+	}
+	button{
+		width: 180px;
+		text-align: center;
+		float: left;
+		margin-left: 10%;
+	}
+
+	button a{
+		padding-bottom: 5px;
+	}
+
+  }
+
+.tituloTotal{
+	font-size: 25px;
+	font-style: normal;
+	color: #000000;
+}
+
+#conte{
+width: 500px;
+height: 340px;
+background-color:#C0C2CB;
+}
+
+#conte p {
+	margin-left: 15px;
+
 }

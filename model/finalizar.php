@@ -15,6 +15,8 @@ class Finalizar
     public $FechaPedido;
 	public $FechaEnvio;
 	public $DireccionEntrega;
+	public $DetalleEntrega;
+	public $TelefonoContacto;
     public $TotalPedido;
     public $EstadoPedido;
     public $MetodoPago;
@@ -22,6 +24,7 @@ class Finalizar
 	public $PrecioUnitario;
     public $DescuentoPedido;
 	public $id;	
+	public $fechaActual;
 
 	
 	public function __CONSTRUCT()
@@ -126,6 +129,7 @@ class Finalizar
 
 	public function Registrar(Finalizar $data)
 	{  
+		$fechaActual = date('d-m-Y');
 		try 
 		{
 		$sql = "INSERT INTO Pedido ( IdEmpleado ,  
@@ -134,10 +138,11 @@ class Finalizar
         FechaPedido,
         FechaEnvio,
         DireccionEntrega,
+		TelefonoContacto,
         TotalPedido,
         EstadoPedido ,
         MetodoPago) 
-		        VALUES (?, ?,? ,? , ? ,?, ?,? ,?)";
+		        VALUES (?, ?,? ,? , ? ,?, ?,? ,?,?)";
 
 		$this->pdo->prepare($sql)
 		     ->execute(
@@ -145,9 +150,10 @@ class Finalizar
                     $data->IdEmpleado,
                     $data->IdCliente, 
                     $data->IdCompaniaEnvio,
-                    $data->FechaPedido,
+					$data->FechaPedido,
                     $data->FechaEnvio ,
                     $data->DireccionEntrega,
+					$data->TelefonoContacto,
                     $data->TotalPedido,
                     $data->EstadoPedido,
                     $data->MetodoPago,

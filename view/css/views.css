@@ -1,6 +1,9 @@
+
+body{
+	font-family: system-ui;
+}
 /*Titulo de la pagina h1*/
 .Titulo{
-	font-family: inherit;
 	margin-left: 10%;
 	font-size: 250%;
 }
@@ -10,7 +13,7 @@
 	text-decoration: none;
 	border: none;
 	background-color: #5E6EB2;
-	color: black;
+	color: white;
 	font-size: 130%;
 	padding: 7px;
 	width: 270px;
@@ -23,6 +26,7 @@
 	display: flex;
 	justify-content: space-evenly;
 	margin-top: 50px;
+	color: white;
 
 }
 .buscar{
@@ -34,6 +38,9 @@
 	border: none;
 	font-size: 110%;
 	margin-left: 11%;
+	background-size: 20px;
+	background-repeat: no-repeat;
+	background-position: 92% center;
 }
 .NewUser:hover{
 	background-color: #515E97;
@@ -44,26 +51,22 @@
 
 /*Tabla*/
 .tabla{
-	border-color: black 1px solid;
 	border-spacing: 0;
 	margin: auto auto;
 	width: 60%;
 	text-align: center;
-	font-family: sans-serif;
+	font-family: system-ui;
 	font-size: 130%;
-	border-radius: 15px;
-	-moz-border-radius: 20px;
-	border:black 2px solid;
-	
 	-moz-border-radius: 20px; 
     -webkit-border-radius: 20px; 
     border-radius: 20px; 
-    -webkit-box-shadow: 13px 15px 10px 1px rgba(0,0,0,0.62);
--moz-box-shadow: 13px 15px 10px 1px rgba(0,0,0,0.62);
-box-shadow: 13px 15px 10px 1px rgba(0,0,0,0.62);
+    -webkit-box-shadow: 0px 0px 11px -3px rgba(0,0,0,0.79);
+	-moz-box-shadow: 0px 0px 11px -3px rgba(0,0,0,0.79);
+	box-shadow: 0px 0px 11px -3px rgba(0,0,0,0.79);
     margin-top: -1px;
-}
 
+}
+/*
 th:first-child { 
     border-top-left-radius: 17px; 
 }
@@ -75,10 +78,8 @@ tr:last-child td:first-child {
 }
 tr:last-child td:last-child { 
     border-bottom-right-radius: 17px; 
-}
-tr:nth-child(even) {
-  background-color: #D8D8E6;
-}
+}*/
+
 
 .tr{
 	background-color: #5E6EB2;
@@ -90,7 +91,7 @@ tr:nth-child(even) {
 .tr th{
 	padding: 10px 5px;	
 }
-th p{
+th {
 	color: white;
 }
 /*icono editar*/
@@ -104,15 +105,48 @@ th p{
 .delete{
 	width: 30px;
 	height: 30px;
+	cursor: pointer;
 }
 .imagen{
-	width: 50px;
-	height: 50px;
+	width: 40px;
+	height: 40px;
 	margin: auto auto;
 }
 .h1{
 	text-align: center;
-	font-family: Arial	;
+	font-family: system-ui	;
+}
+.autorizacion{
+	margin-top: 2%;
+	text-align: left;
+	width: 100%;
+	display: grid;
+	place-items: center;
+	text-align: center;
+}
+.paginacionDiv{
+	margin-top: 25px;
+	display: flex;
+	justify-content: center;
+}
+.paginacionUl{
+	display: inline-flex;
 }
 
+.paginacionUl li{
+	list-style: none;
+	margin: 0px;
+	font-size: 150%;
+	
+}
+.paginacionUl li a{
+	display: block;
+	text-decoration: none;
+	color: black;
+	padding: 15px 20px;
+}
 
+.paginacionUl li:hover{
+	background-color: #A2A5B2;
+	transition: .3s;
+}

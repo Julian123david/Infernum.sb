@@ -1,6 +1,48 @@
+<?php
+if(!isset($_SESSION['rol'])){
+    header('location: login.php');
+}else{
+    if($_SESSION['rol'] != 1){
+        header('location: login.php');
+    }
+}
+
+?>
+
+
+
 <link rel="stylesheet" type="text/css" href="../css/view.css">
-<<<<<<< HEAD
+<link rel="stylesheet" href="../view/nav/navGerente.css">
+  
+  <header style="flex: inline;">
+        <nav class="navegacion">
+            
+            <ul class="menu0">
+                <li><a href=""><img class="logo" src="img/logo2.png"></a></li>
+                
+            </ul>
+            <ul class="menu3">
+                <li><a class="logout" href="loginout.php">Cerrar Sesion</a></li>
+            </ul>
+            <ul class="menu1">
+                <li><a href="gerente.php">Home</a></li>
+                <li><a href="ProductosCategoria.php">Acciones</a>
+                    <ul class="submenu">
+                        <li><a href="indexPedido.php">Pedidos</a></li>
+                        <li><a href="indexCategoria.php">Categorias</a></li>
+                        <li><a href="indexProducto.php">Productos</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
 <script type="text/javascript" src="js/buscador.js"></script>
+<?php
+
+$link = new PDO('mysql:host=localhost;dbname=proyecto', 'root', ''); // el campo vaciío es para la password. 
+
+?>
 <style>
  datos {border:1px solid #ccc;padding:10px;font-size:1em;}
  
@@ -21,10 +63,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 body {font-family: Arial, Helvetica, sans-serif;}
  
 </style>
-<h1 class="Titulo">Pedido</h1>
-=======
 
->>>>>>> 4350297f9ea70579e6b0aea20c8e41acd5170996
 
 <style type="text/css">
     .btnvolver{
@@ -48,22 +87,28 @@ body {font-family: Arial, Helvetica, sans-serif;}
 <div class="btnvolver"><a href="javascript:history.back()"> Volver</a></div>
 <h1 class="Titulo">Pedido</h1>
 <br>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="js/paginacion.js"></script>
+
 <div class="NewUserdiv">
 <a  href="?c=Pedido&a=Crud1">
     <input class="NewUser" type="button" value="Nuevo Pedido"> </a> 
     <input class="buscar" type="text" placeholder="Buscar Pedido" id="searchTerm" onkeyup="doSearch()">
 </div>
+
+
+
 <br>
 <table class="tabla" id="datos">
     <thead>
         <tr class="tr">
-            <th>Id</th>            
-            <th>IdEmpleado</th>
-            <th>IdCliente</th>
-            <th>IdCompaniaEnvio</th>
+            <th>Empleado</th>
+            <th>Cliente</th>
             <th>FechaPedido</th>
             <th>FechaEnvio</th>
             <th>DireccionEntrega</th>
+            <th>TelefonoContacto</th>
             <th>TotalPedido</th>
             <th>EstadoPedido</th>
             <th>MetodoPago</th>
@@ -74,32 +119,51 @@ body {font-family: Arial, Helvetica, sans-serif;}
     <tbody>
     <?php foreach($this->model->Listar() as $r): ?>
         <tr class="tr2">
-            <td><?php echo $r->IdPedido; ?></td>          
-              <td><?php echo $r->IdEmpleado; ?></td>
-            <td><?php echo $r->IdCliente; ?></td>
-            <td><?php echo $r->IdCompaniaEnvio; ?></td>
+            <td><?php echo $r->NombreEmpleado; ?></td>
+            <td><?php echo $r->NombreCliente; ?></td>
             <td><?php echo $r->FechaPedido; ?></td>
             <td><?php echo $r->FechaEnvio; ?></td>
             <td><?php echo $r->DireccionEntrega; ?></td>
+            <td><?php echo $r->TelefonoContacto; ?></td>
             <td><?php echo $r->TotalPedido; ?></td>
             <td><?php echo $r->EstadoPedido; ?></td>
             <td><?php echo $r->MetodoPago; ?></td>
 
 
             <td>
-                <a href="?c=Pedido&a=Crud&IdPedido=<?php echo $r->IdPedido; ?>"> <img class="edit" src="img/edit.png">
-</a>
+                <a href="?c=Pedido&a=Crud&IdPedido=<?php echo $r->IdPedido; ?>"><img class="edit" src="img/edit.png"></a>
             </td>
-            <td>
-                <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?c=Pedido&a=Eliminar&IdPedido=<?php echo $r->IdPedido; ?>">                <img class="delete" src="img/delete.png">
-</a>
-            </td>
+
+            
+            
+
         </tr>
         <tr class='noSearch hide'>
 
-<td colspan="5"></td>
+<td colspan="12"></td>
 
 </tr>
     <?php endforeach; ?>
     </tbody>
 </table> 
+<div class="paginacionDiv">
+    <ul class="paginacionUl" id="myPager"></ul>
+</div>
+
+<div class="autorizacion">
+<?php foreach ($link->query('SELECT count(*) EstadoPedido FROM Pedido p inner join DetallePedido d on p.IdPedido = d.IdPedido  WHERE EstadoPedido = "" and CantidadProducto <=10;') as $row){ ?> 
+<a  class="NewUser" href="?c=Pedido&a=Crud2">Pedidos por Autorizar (<?php echo $row['EstadoPedido'] ?>)</a>
+<?php
+	}
+?>
+<br><br>
+<?php foreach ($link->query('SELECT count(*) CantidadProducto from Pedido p inner join DetallePedido d on p.IdPedido = d.IdPedido where CantidadProducto >=10 and EstadoPedido ="" ;') as $row){ ?> 
+<a class="NewUser" href="?c=Pedido&a=Crud3">Pedidos Cantidad (<?php echo $row['CantidadProducto'] ?>)</a>
+<?php
+	}
+?>
+<br><br>
+<a class="NewUser" href="?c=Pedido&a=Crud4">Pedidos Terminados </a>
+</div>
+
+

@@ -1,0 +1,95 @@
+body
+{
+	font-family: system-ui;
+	margin: 0;
+	padding: 0;
+	background: #5E6EB2;
+}
+nav
+{
+	height: 72px;
+	background: #C7C8D2;
+}
+img
+{
+	margin-top: 8px;
+	margin-left: 2%;
+	width: 250px;
+}
+.contenedor
+{
+    width: 450px;
+    height: fit-content;
+    background:  #C7C8D2;
+    border-radius: 7px;
+    text-align: center;
+    margin: auto auto;
+}
+.contenedor h1
+{
+    font-size: 35px;
+    font-weight: 700;
+    margin: 50px 0 30px 10px;
+    color: #050041;
+}
+.container .form-register
+{
+    width: 100%;
+}
+.form-register form
+{
+    margin-left: 50px;
+    display: flex;
+    width: 100%;
+}
+.form-register form .pagina
+{
+    width: 80%;
+}
+.form-register form .pagina .nombre 
+{
+    height: 35px;
+    width: 350px;
+    margin: 40px 0;
+    display: flex;
+    position: relative;
+}
+.form-register form .pagina .nombre .label
+{
+    position: absolute;
+    top: -30px;
+    font-weight: 500;
+    font-size: 18px;
+    font-style: italic;
+    float: left;
+    text-align: left;
+    width: 100%;
+}
+.form-register form .pagina .nombre input
+{
+    width: 100%;
+    height: 100%;
+    border: 1px solid #5E6EB2;
+    border-radius: 5px;
+    font-size: 16px;
+    padding-left: 5px;
+}
+.form-register form .pagina .nombre button
+{
+    width: 100%;
+    height: calc(100% + 5px);
+    margin-top: -20px;
+    border: none;
+    background-color: #050041;
+    border-radius: 7px;
+    color: #C7C8D2;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s ease;    
+}
+.form-register form .pagina .nombre button:hover
+{
+    background-color: #5E6EB2;
+}

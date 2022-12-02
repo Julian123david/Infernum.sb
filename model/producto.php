@@ -2,11 +2,10 @@
 class Producto
 {
 	private $pdo;
-    
-    public $id;	
+
+    public $cod;
 	public $IdCategoria;
     public $img;	
-	public $cod;
     public $nom;
 	public $pre;
 	public $EstadoProducto;
@@ -31,7 +30,7 @@ class Producto
 		{
 			$result = array();
 
-			$stm = $this->pdo->prepare("SELECT p.id, c.NombreCategoria, p.img, p.cod, p.nom, p.pre, p.EstadoProducto from Producto p inner join Categoria c on p.IdCategoria = c.IdCategoria;
+			$stm = $this->pdo->prepare("SELECT p.cod, c.NombreCategoria, p.img,  p.nom, p.pre, p.EstadoProducto from Producto p inner join Categoria c on p.IdCategoria = c.IdCategoria order by p.cod;
 			");
 			$stm->execute();
 
@@ -43,15 +42,15 @@ class Producto
 		}
 	}
 
-	public function Obtener($id)
+	public function Obtener($cod)
 	{
 		try 
 		{
 			$stm = $this->pdo
-			          ->prepare("SELECT * FROM Producto WHERE id = ?");
+			          ->prepare("SELECT * FROM Producto WHERE cod = ?");
 			          
 
-			$stm->execute(array($id));
+			$stm->execute(array($cod));
 			return $stm->fetch(PDO::FETCH_OBJ);
 		} catch (Exception $e) 
 		{
@@ -59,14 +58,14 @@ class Producto
 		}
 	}
 
-	public function Eliminar($id)
+	public function Eliminar($cod)
 	{
 		try 
 		{
 			$stm = $this->pdo
-			            ->prepare("DELETE FROM Producto WHERE id = ?");			          
+			            ->prepare("DELETE FROM Producto WHERE cod = ?");			          
 
-			$stm->execute(array($id));
+			$stm->execute(array($cod));
 		} catch (Exception $e) 
 		{
 			die($e->getMessage());
@@ -80,25 +79,23 @@ class Producto
 			$sql = "UPDATE Producto SET 						
 						IdCategoria= ?,
 						img = ?,
-                        cod  = ?,
 						nom = ?,
 						pre =?,
 						EstadoProducto =?
 
-				    WHERE id = ?";
+				    WHERE cod = ?";
 
 			$this->pdo->prepare($sql)
 			     ->execute(
 				    array(						
 						$data->IdCategoria,
                         $data->img, 
-                        $data->cod,
+                        
 						$data->nom,
 						$data->pre,
 						$data->EstadoProducto,
+						$data->cod
 
-
-                        $data->id
 					)
 				);
 		} catch (Exception $e) 
@@ -111,15 +108,15 @@ class Producto
 	{
 		try 
 		{
-		$sql = "INSERT INTO Producto ( id, IdCategoria, img ,cod, nom, pre, EstadoProducto) 
-		        VALUES (?, ?, ?, ?, ?,?,?)";
+		$sql = "INSERT INTO Producto ( cod, IdCategoria, img , nom, pre, EstadoProducto) 
+		        VALUES (?, ?, ?, ?, ?,?)";
 
 		$this->pdo->prepare($sql)
 		     ->execute(
-				array(					
+				array(	
+					$data->cod,				
 					$data->IdCategoria,
 					$data->img, 
-					$data->cod,
 					$data->nom,
 					$data->pre,
 					$data->EstadoProducto,
